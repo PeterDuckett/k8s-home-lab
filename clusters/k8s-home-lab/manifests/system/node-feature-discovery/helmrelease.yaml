@@ -75,3 +75,4 @@ spec:
               matchOn:
                 - usbId:
                     vendor: ["1a6e", "18d1"]
+                    
