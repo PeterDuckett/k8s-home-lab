@@ -4,8 +4,6 @@ kind: HelmRelease
 metadata:
   name: node-feature-discovery
   namespace: system
-  annotations:
-    fluxcd.io/automated: "true"
 spec:
   helmVersion: v3
   interval: 5m
