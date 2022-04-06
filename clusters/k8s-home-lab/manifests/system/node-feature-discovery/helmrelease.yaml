@@ -5,7 +5,6 @@ metadata:
   name: node-feature-discovery
   namespace: system
 spec:
-  helmVersion: v3
   interval: 5m
   chart:
     spec:
