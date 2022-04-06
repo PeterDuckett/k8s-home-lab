@@ -6,8 +6,7 @@ metadata:
   namespace: flux-system
 spec: 
   dependsOn: 
-    - 
-      name: system-namespace
+    - name: system-namespace
   interval: 5m
   path: ./clusters/k8s-home-lab/manifests/system/intel-gpu-plugin
   prune: true
