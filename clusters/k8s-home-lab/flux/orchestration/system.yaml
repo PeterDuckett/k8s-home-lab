@@ -1,33 +1,34 @@
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
-metadata:
+metadata: 
   name: system-namespace
   namespace: flux-system
-spec:
+spec: 
   interval: 5m
-  path: "./clusters/k8s-home-lab/manifests/system"
+  path: ./clusters/k8s-home-lab/manifests/system
   prune: true
-  wait: true
-  sourceRef:
+  sourceRef: 
     kind: GitRepository
     name: home-ops
+  wait: true
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
-metadata:
+metadata: 
   name: system-intel-gpu-plugin
   namespace: flux-system
-spec:
-  dependsOn:
-    - name: system-namespace
+spec: 
+  dependsOn: 
+    - 
+      name: system-namespace
   interval: 5m
-  path: "./clusters/k8s-home-lab/manifests/system/intel-gpu-plugin"
+  path: ./clusters/k8s-home-lab/manifests/system/intel-gpu-plugin
   prune: true
-  wait: true
-  sourceRef:
+  sourceRef: 
     kind: GitRepository
     name: home-ops
+  wait: true
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
