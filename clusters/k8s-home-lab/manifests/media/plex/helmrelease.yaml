@@ -1,0 +1,102 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: plex
+  namespace: media
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: plex
+      version: 6.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: ghcr.io/k8s-at-home/plex
+      tag: v1.25.9.5721-965587f64
+
+    podSecurityContext:
+      supplementalGroups:
+        - 44
+        - 109
+        - 65539
+
+    env:
+      TZ: "Europe/London"
+
+    service:
+      main:
+        primary: true
+        ports:
+          http:
+            port: 32400
+      dnla-tcp:
+        enabled: true
+        type: NodePort
+        ports:
+          dnla-tcp:
+            enabled: true
+            port: 32469
+            protocol: TCP
+            targetPort: 32469
+        externalTrafficPolicy: Local
+      dnla-udp:
+        enabled: true
+        type: NodePort
+        ports:
+          dnla-udp:
+            enabled: true
+            port: 1900
+            protocol: TCP
+            targetPort: 1900
+        externalTrafficPolicy: Local
+
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt
+        hosts:
+          - host: "plex.peterduckett.me"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - secretName: tls.plex
+            hosts:
+              - plex.peterduckett.me
+
+    persistence:
+      config:
+        enabled: true
+        existingClaim: plex-config-pvc
+
+      transcode:
+        enabled: true
+        type: emptyDir
+        medium: Memory
+
+    resources:
+      requests:
+        cpu: 35m
+        memory: 1500Mi
+        gpu.intel.com/i915: 1
+      limits:
+        gpu.intel.com/i915: 1
+        memory: 8000Mi
+
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/custom-intel-gpu
+                  operator: In
+                  values:
+                    - "true"
