@@ -81,7 +81,8 @@ spec:
 #        configFileSecret: downloads-gateway-vpnconfig
         configSecret:
           enabled: true
-          config: | W0ludGVyZmFjZV0KUHJpdmF0ZUtleT1JSEtlTnI3emtFWndKZjZQUklQUStTSzdHOG9sRTN2aHdI
+          config: | 
+W0ludGVyZmFjZV0KUHJpdmF0ZUtleT1JSEtlTnI3emtFWndKZjZQUklQUStTSzdHOG9sRTN2aHdI
 NGNzNjd4NG1JPQpBZGRyZXNzPTEwLjE0LjAuMi84Ck1UVT0xMzUwClBvc3RVcCA9IC9jb25maWcv
 dXAuc2ggJWkKUHJlRG93biA9IC9jb25maWcvZG93bi5zaCAlaQoKW1BlZXJdClB1YmxpY0tleT1v
 MDdrLzJkc2FRa0xMU1IwZENJL0ZVZDNGTGlrL0YvSEJCY09HVWtOUUdvPQpBbGxvd2VkSVBzPTE3
