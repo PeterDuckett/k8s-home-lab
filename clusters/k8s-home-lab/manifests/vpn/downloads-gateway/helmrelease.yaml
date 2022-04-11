@@ -79,9 +79,12 @@ spec:
           KILLSWITCH: "false"
 
 #        configFileSecret: downloads-gateway-vpnconfig
-        configSecret:
-          enabled: true
-          config: W0ludGVyZmFjZV0KUHJpdmF0ZUtleT1JSEtlTnI3emtFWndKZjZQUklQUStTSzdHOG9sRTN2aHdINGNzNjd4NG1JPQpBZGRyZXNzPTEwLjE0LjAuMi84Ck1UVT0xMzUwClBvc3RVcCA9IC9jb25maWcvdXAuc2ggJWkKUHJlRG93biA9IC9jb25maWcvZG93bi5zaCAlaQoKW1BlZXJdClB1YmxpY0tleT1vMDdrLzJkc2FRa0xMU1IwZENJL0ZVZDNGTGlrL0YvSEJCY09HVWtOUUdvPQpBbGxvd2VkSVBzPTE3Mi4xNi4wLjM2LzMyCkVuZHBvaW50PXdncy5wcm9kLnN1cmZzaGFyay5jb206NTE4MjAKUGVyc2lzdGVudEtlZXBhbGl2ZT0yNQoKW1BlZXJdClB1YmxpY0tleT1pQkpSWExad1h1V1dyT1pFMVpyQVhFS01nVi96MFdqRzBUa3M1cm5XTEJJPQpBbGxvd2VkSVBzPTAuMC4wLjAvMApFbmRwb2ludD11ay1sb24ucHJvZC5zdXJmc2hhcmsuY29tOjUxODIwClBlcnNpc3RlbnRLZWVwYWxpdmU9MjUKCg==
+
+        persistence:
+          config:
+            enabled: true
+            mountPath: /etc/wireguard
+            existingClaim: wireguard-config-pvc
 
         resources:
           requests:
