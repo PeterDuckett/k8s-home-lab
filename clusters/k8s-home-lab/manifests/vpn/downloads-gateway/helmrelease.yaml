@@ -78,13 +78,7 @@ spec:
           IPTABLES_BACKEND: nft
           KILLSWITCH: "false"
 
-#        configFileSecret: downloads-gateway-vpnconfig
-
-        persistence:
-          config:
-            enabled: true
-            mountPath: /etc/wireguard
-            existingClaim: wireguard-config-pvc
+        configFileSecret: downloads-gateway-vpnconfig
 
         resources:
           requests:
