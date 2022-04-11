@@ -6,14 +6,18 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-#  dependsOn:
-#    - name: cluster-config
-#    - name: cluster-repositories
-#    - name: manage-flux
-#    - name: cluster-crds
+  #  dependsOn:
+  #    - name: cluster-config
+  #    - name: cluster-repositories
+  #    - name: manage-flux
+  #    - name: cluster-crds
   path: ./clusters/k8s-home-lab/flux/orchestration
   prune: true
   wait: true
   sourceRef:
     kind: GitRepository
     name: home-ops
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
