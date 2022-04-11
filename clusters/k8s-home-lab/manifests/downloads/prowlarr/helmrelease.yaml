@@ -45,6 +45,7 @@ spec:
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
+          kubernetes.io/ingress.class: "traefik"
         hosts:
           - host: "prowlarr.peterduckett.me"
             paths:
@@ -53,9 +54,3 @@ spec:
           - secretName: tls.prowlarr
             hosts:
               - prowlarr.peterduckett.me
-
-    resources:
-      requests:
-        memory: "256M"
-      limits:
-        memory: "384M"
