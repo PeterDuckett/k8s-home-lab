@@ -80,7 +80,7 @@ spec:
 
  #       configFileSecret: downloads-gateway-vpnconfig
 
-        configFile: | -
+        configFile: |
           [Interface]
           PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
           Address=10.14.0.2/8
