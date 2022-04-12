@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: readarr
+  name: radarr
   namespace: downloads
 spec:
   interval: 5m
   chart:
     spec:
-      chart: readarr
-      version: 6.2.0
+      chart: radarr
+      version: 16.0.1
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -17,8 +17,9 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/readarr
-      tag: v0.1.1.1306
+      repository: ghcr.io/k8s-at-home/radarr-develop
+      tag: v4.1.0.6095
+      pullPolicy: Always
 
     podSecurityContext:
       supplementalGroups:
@@ -30,7 +31,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: readarr-config-pvc
+        existingClaim: radarr-config-pvc
       media:
         enabled: false
         type: custom
@@ -46,11 +47,19 @@ spec:
         ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
+          kubernetes.io/ingress.class: "traefik"
         hosts:
-          - host: "readarr.peterduckett.me"
+          - host: &host "radarr.peterduckett.me"
             paths:
               - path: /
         tls:
-          - secretName: tls.readarr
+          - secretName: tls.radarr
             hosts:
-              - readarr.peterduckett.me
+              - *host
+
+    resources:
+      requests:
+        cpu: "0.04"
+        memory: "256M"
+      limits:
+        memory: "1024M"
