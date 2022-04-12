@@ -40,8 +40,8 @@ spec:
       VXLAN_IP_NETWORK: 172.16.1
       VPN_BLOCK_OTHER_TRAFFIC: true
       VPN_TRAFFIC_PORT: "51820"
-#      NOT_ROUTED_TO_GATEWAY_CIDRS: "172.16.0.0/12 ${NETWORK_K8S_POD_CIDR} ${NETWORK_K8S_SERVICE_CIDR} ${NETWORK_SERVERS_CIDR}"
-#      VPN_LOCAL_CIDRS: "172.16.0.0/12 ${NETWORK_K8S_POD_CIDR} ${NETWORK_K8S_SERVICE_CIDR} ${NETWORK_SERVERS_CIDR}"
+      NOT_ROUTED_TO_GATEWAY_CIDRS: "172.16.0.0/12 ${NETWORK_K8S_POD_CIDR} ${NETWORK_K8S_SERVICE_CIDR} ${NETWORK_SERVERS_CIDR}"
+      VPN_LOCAL_CIDRS: "172.16.0.0/12 ${NETWORK_K8S_POD_CIDR} ${NETWORK_K8S_SERVICE_CIDR} ${NETWORK_SERVERS_CIDR}"
 
     webhook:
       image:
@@ -100,12 +100,12 @@ spec:
           Endpoint=uk-lon.prod.surfshark.com:51820
           PersistentKeepalive=25
 
-        resources:
-          requests:
-            cpu: "0.001"
-            memory: 64Mi
-          limits:
-            memory: 128Mi
+        # resources:
+        #   requests:
+        #     cpu: "0.001"
+        #     memory: 64Mi
+        #   limits:
+        #     memory: 128Mi
 
         networkPolicy:
           enabled: true
