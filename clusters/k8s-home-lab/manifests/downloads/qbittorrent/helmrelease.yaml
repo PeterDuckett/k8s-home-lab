@@ -34,7 +34,7 @@ spec:
       automaticPortSetup: false
 
     env:
-      TZ: ""Europe/London""
+      TZ: "Europe/London"
       UMASK: "022"
 
     persistence:
