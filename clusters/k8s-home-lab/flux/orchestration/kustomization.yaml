@@ -4,5 +4,5 @@ kind: Kustomization
 resources:
   - ./system.yaml
   - ./media.yaml
-  - ./downloads.yaml
-  - ./vpn.yaml
+ # - ./downloads.yaml
+ # - ./vpn.yaml
