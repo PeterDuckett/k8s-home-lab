@@ -85,8 +85,6 @@ spec:
           PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
           Address=10.14.0.2/8
           MTU=1350
-          PostUp = /config/up.sh %i
-          PreDown = /config/down.sh %i
 
           [Peer]
           PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
