@@ -5,4 +5,4 @@ resources:
   - ./system.yaml
   - ./media.yaml
   - ./downloads.yaml
-  - ./vpn.yaml
+#  - ./vpn.yaml
