@@ -1,5 +1,4 @@
 ---
-
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -55,7 +54,7 @@ spec:
 
     addons:
       netshoot:
-        enabled: false
+        enabled: true
 
       vpn:
         enabled: true
@@ -88,12 +87,6 @@ spec:
           MTU=1350
           PostUp = /config/up.sh %i
           PreDown = /config/down.sh %i
-
-          [Peer]
-          PublicKey=o07k/2dsaQkLLSR0dCI/FUd3FLik/F/HBBcOGUkNQGo=
-          AllowedIPs=172.16.0.36/32
-          Endpoint=wgs.prod.surfshark.com:51820
-          PersistentKeepalive=25
 
           [Peer]
           PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
