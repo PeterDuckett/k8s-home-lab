@@ -89,7 +89,7 @@ spec:
           [Peer]
           PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
           AllowedIPs=0.0.0.0/0
-          Endpoint=185.134.23.74:51820
+          Endpoint=uk-lon.prod.surfshark.com:51820
           PersistentKeepalive=25
 
         # resources:
