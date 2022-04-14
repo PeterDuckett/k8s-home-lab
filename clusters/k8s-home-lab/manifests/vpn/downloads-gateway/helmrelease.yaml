@@ -99,15 +99,15 @@ spec:
         #   limits:
         #     memory: 128Mi
 
-        networkPolicy:
-          enabled: true
+        # networkPolicy:
+        #   enabled: true
 
-          egress:
-            - to:
-                - ipBlock:
-                    cidr: 0.0.0.0/0
-              ports:
-                - port: 51820
-                  protocol: UDP
-            - to:
-                - namespaceSelector: {}
+        #   egress:
+        #     - to:
+        #         - ipBlock:
+        #             cidr: 0.0.0.0/0
+        #       ports:
+        #         - port: 51820
+        #           protocol: UDP
+        #     - to:
+        #         - namespaceSelector: {}
