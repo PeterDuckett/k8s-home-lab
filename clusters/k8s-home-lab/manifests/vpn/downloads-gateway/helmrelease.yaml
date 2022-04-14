@@ -57,7 +57,7 @@ spec:
         enabled: true
 
       vpn:
-        enabled: false
+        enabled: true
         type: wireguard
 
         wireguard:
