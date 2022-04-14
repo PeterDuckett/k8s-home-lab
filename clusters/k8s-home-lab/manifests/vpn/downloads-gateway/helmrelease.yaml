@@ -35,7 +35,7 @@ spec:
     #         port: 55954
 
     settings:
-      VPN_INTERFACE: wg0
+      #  VPN_INTERFACE: wg0
       # #    VXLAN_ID: 43
       # #    VXLAN_IP_NETWORK: 172.16.0
       VPN_BLOCK_OTHER_TRAFFIC: true
