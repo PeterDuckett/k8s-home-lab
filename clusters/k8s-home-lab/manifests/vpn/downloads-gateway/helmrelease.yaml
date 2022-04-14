@@ -20,19 +20,19 @@ spec:
       repository: ghcr.io/k8s-at-home/pod-gateway
       tag: v1.4.0
 
-    # DNS: 10.42.0.1
+     DNS: 172.16.0.1
 
     routed_namespaces:
       - downloads
 
-#     publicPorts:
-#       - hostname: qbittorrent # hostname assigned to the pod
-#         IP: 10 # must be an integer between 2 and VXLAN_GATEWAY_FIRST_DYNAMIC_IP (20 by default)
-#         ports:
-#           - type: udp
-#             port: 55954
-#           - type: tcp
-#             port: 55954
+    # publicPorts:
+    #   - hostname: qbittorrent # hostname assigned to the pod
+    #     IP: 10 # must be an integer between 2 and VXLAN_GATEWAY_FIRST_DYNAMIC_IP (20 by default)
+    #     ports:
+    #       - type: udp
+    #         port: 55954
+    #       - type: tcp
+    #         port: 55954
 
     settings:
       VPN_INTERFACE: wg0
@@ -78,7 +78,7 @@ spec:
           IPTABLES_BACKEND: nft
           KILLSWITCH: "true"
 
-#  #       configFileSecret: downloads-gateway-vpnconfig
+ #       configFileSecret: downloads-gateway-vpnconfig
 
         configFile: |
           [Interface]
@@ -92,22 +92,22 @@ spec:
           Endpoint=185.134.23.74:51820
           PersistentKeepalive=25
 
-#         # resources:
-#         #   requests:
-#         #     cpu: "0.001"
-#         #     memory: 64Mi
-#         #   limits:
-#         #     memory: 128Mi
+        # resources:
+        #   requests:
+        #     cpu: "0.001"
+        #     memory: 64Mi
+        #   limits:
+        #     memory: 128Mi
 
-#         networkPolicy:
-#           enabled: true
+        networkPolicy:
+          enabled: true
 
-#           egress:
-#             - to:
-#                 - ipBlock:
-#                     cidr: 0.0.0.0/0
-#               ports:
-#                 - port: 51820
-#                   protocol: UDP
-#             - to:
-#                 - namespaceSelector: {}
+          egress:
+            - to:
+                - ipBlock:
+                    cidr: 0.0.0.0/0
+              ports:
+                - port: 51820
+                  protocol: UDP
+            - to:
+                - namespaceSelector: {}
