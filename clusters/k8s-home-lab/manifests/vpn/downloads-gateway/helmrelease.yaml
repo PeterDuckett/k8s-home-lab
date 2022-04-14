@@ -38,7 +38,7 @@ spec:
       #  VPN_INTERFACE: wg0
       # #    VXLAN_ID: 43
       # #    VXLAN_IP_NETWORK: 172.16.0
-      VPN_BLOCK_OTHER_TRAFFIC: true
+      # VPN_BLOCK_OTHER_TRAFFIC: true
       #VPN_TRAFFIC_PORT: "51820"
       NOT_ROUTED_TO_GATEWAY_CIDRS: "10.42.0.0/16 10.43.0.0/16"
       #VPN_LOCAL_CIDRS: "10.0.0.0/8 192.168.0.0/16"
@@ -52,69 +52,69 @@ spec:
     #      gatewayLabel: setGateway
     #      gatewayAnnotation: setGateway
 
-    addons:
-      # #      netshoot:
-      # #        enabled: false
+    # addons:
+    #   # #      netshoot:
+    #   # #        enabled: false
 
-      vpn:
-        enabled: false
-        type: wireguard
+    #   vpn:
+    #     enabled: false
+    #     type: wireguard
 
-        wireguard:
-          image:
-            repository: ghcr.io/k8s-at-home/wireguard
-            tag: v1.0.20210914
-            pullPolicy: IfNotPresent
+    #     wireguard:
+    #       image:
+    #         repository: ghcr.io/k8s-at-home/wireguard
+    #         tag: v1.0.20210914
+    #         pullPolicy: IfNotPresent
 
-        #         securityContext:
-        #           runAsUser: 568
-        #           runAsGroup: 568
-        #           capabilities:
-        #             drop:
-        #               - "SYS_MODULE"
+    #     #         securityContext:
+    #     #           runAsUser: 568
+    #     #           runAsGroup: 568
+    #     #           capabilities:
+    #     #             drop:
+    #     #               - "SYS_MODULE"
 
-        env:
-          TZ: "Europe/London"
-        #           IPTABLES_BACKEND: nft
-        #           KILLSWITCH: "true"
+    #     env:
+    #       TZ: "Europe/London"
+    #     #           IPTABLES_BACKEND: nft
+    #     #           KILLSWITCH: "true"
 
-        #  #       configFileSecret: downloads-gateway-vpnconfig
+    #     #  #       configFileSecret: downloads-gateway-vpnconfig
 
-        configFile: |
-          [Interface]
-          PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
-          Address=10.14.0.2/8
-          MTU=1350
+    #     configFile: |
+    #       [Interface]
+    #       PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
+    #       Address=10.14.0.2/8
+    #       MTU=1350
 
-          [Peer]
-          PublicKey=o07k/2dsaQkLLSR0dCI/FUd3FLik/F/HBBcOGUkNQGo=
-          AllowedIPs=172.16.0.36/32
-          Endpoint=wgs.prod.surfshark.com:51820
-          PersistentKeepalive=25
+    #       [Peer]
+    #       PublicKey=o07k/2dsaQkLLSR0dCI/FUd3FLik/F/HBBcOGUkNQGo=
+    #       AllowedIPs=172.16.0.36/32
+    #       Endpoint=wgs.prod.surfshark.com:51820
+    #       PersistentKeepalive=25
 
-          [Peer]
-          PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
-          AllowedIPs=0.0.0.0/0
-          Endpoint=uk-lon.prod.surfshark.com:51820
-          PersistentKeepalive=25
+    #       [Peer]
+    #       PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
+    #       AllowedIPs=0.0.0.0/0
+    #       Endpoint=uk-lon.prod.surfshark.com:51820
+    #       PersistentKeepalive=25
 
-        # resources:
-        #   requests:
-        #     cpu: "0.001"
-        #     memory: 64Mi
-        #   limits:
-        #     memory: 128Mi
+    #     # resources:
+    #     #   requests:
+    #     #     cpu: "0.001"
+    #     #     memory: 64Mi
+    #     #   limits:
+    #     #     memory: 128Mi
 
-        # networkPolicy:
-        #   enabled: true
+    #     # networkPolicy:
+    #     #   enabled: true
 
-        #   egress:
-        #     - to:
-        #         - ipBlock:
-        #             cidr: 0.0.0.0/0
-        #       ports:
-        #         - port: 51820
-        #           protocol: UDP
-        #     - to:
-        #         - ipBlock:
-        #             cidr: 10.0.0.0/8
+    #     #   egress:
+    #     #     - to:
+    #     #         - ipBlock:
+    #     #             cidr: 0.0.0.0/0
+    #     #       ports:
+    #     #         - port: 51820
+    #     #           protocol: UDP
+    #     #     - to:
+    #     #         - ipBlock:
+    #     #             cidr: 10.0.0.0/8
