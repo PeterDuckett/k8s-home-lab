@@ -26,7 +26,7 @@ spec:
         - 65539
 
     env:
-      TZ: "Europe/London"
+      TZ: "${TIMEZONE}"
 
     persistence:
       config:
@@ -54,16 +54,16 @@ spec:
         primary: true
         ingressClassName: "traefik"
         annotations:
-          kubernetes.io/ingress.class: "traefik"
+          #          kubernetes.io/ingress.class: "traefik"
           cert-manager.io/cluster-issuer: letsencrypt
         hosts:
-          - host: "nzbget.peterduckett.me"
+          - host: &host "nzbget.${INGRESS_DOMAIN}"
             paths:
               - path: /
         tls:
           - secretName: tls.nzbget
             hosts:
-              - nzbget.peterduckett.me
+              - *host
 
     resources:
       requests:
