@@ -5,8 +5,8 @@ metadata:
   name: cluster-config
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: manage-flux
+  #  dependsOn:
+  #    - name: manage-flux
   interval: 10m0s
   path: ./clusters/k8s-home-lab/flux/vars
   prune: true
