@@ -21,22 +21,10 @@ spec:
       tag: v0.3.0.1679
       pullPolicy: IfNotPresent
 
-    hostname: prowlarr
+    # hostname: prowlarr
 
     #    podAnnotations:
     #      setGateway: "true"
-
-    env:
-      TZ: "${TIMEZONE}"
-
-    persistence:
-      config:
-        enabled: true
-        existingClaim: prowlarr-config-pvc
-      shared:
-        enabled: true
-        type: emptyDir
-        mountPath: /shared
 
     ingress:
       main:
@@ -54,3 +42,15 @@ spec:
           - secretName: tls.prowlarr
             hosts:
               - *host
+
+    env:
+      TZ: "${TIMEZONE}"
+
+    persistence:
+      config:
+        enabled: true
+        existingClaim: prowlarr-config-pvc
+      shared:
+        enabled: true
+        type: emptyDir
+        mountPath: /shared
