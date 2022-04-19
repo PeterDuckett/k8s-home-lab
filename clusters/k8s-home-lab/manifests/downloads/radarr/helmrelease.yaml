@@ -25,6 +25,9 @@ spec:
       supplementalGroups:
         - 65539
 
+    podAnnotations:
+      setGateway: "true"
+
     env:
       TZ: "${TIMEZONE}"
 

@@ -48,6 +48,9 @@ spec:
             path: /volume1/Media
         mountPath: /data/nas-media
 
+    podAnnotations:
+      setGateway: "true"
+
     ingress:
       main:
         enabled: true
