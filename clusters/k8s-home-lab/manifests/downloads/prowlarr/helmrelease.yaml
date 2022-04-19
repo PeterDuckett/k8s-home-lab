@@ -29,10 +29,10 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "traefik"
+        #        ingressClassName: "traefik"
         annotations:
           cert-manager.io/cluster-issuer: letsencrypt
-        #         kubernetes.io/ingress.class: "traefik"
+          kubernetes.io/ingress.class: "traefik"
         hosts:
           - host: &host "prowlarr.${INGRESS_DOMAIN}"
             paths:
