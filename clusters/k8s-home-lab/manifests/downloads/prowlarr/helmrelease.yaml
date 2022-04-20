@@ -26,8 +26,25 @@ spec:
     podAnnotations:
       setGateway: "true"
 
+    ingress:
+      main:
+        enabled: true
+        #        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt
+          kubernetes.io/ingress.class: "traefik"
+        hosts:
+          - host: &host "prowlarr.${INGRESS_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - secretName: tls.prowlarr
+            hosts:
+              - *host
+
     env:
-      TZ: "Europe/London"
+      TZ: "${TIMEZONE}"
 
     persistence:
       config:
@@ -37,20 +54,3 @@ spec:
         enabled: true
         type: emptyDir
         mountPath: /shared
-
-
-    ingress:
-      main:
-        enabled: true
-        ingressClassName: "traefik"
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
-          kubernetes.io/ingress.class: "traefik"
-        hosts:
-          - host: "prowlarr.peterduckett.me"
-            paths:
-              - path: /
-        tls:
-          - secretName: tls.prowlarr
-            hosts:
-              - prowlarr.peterduckett.me

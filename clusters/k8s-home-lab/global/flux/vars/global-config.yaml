@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: global-config
+  namespace: flux-system
+data:
+  test: +pW5W9SvtqScQtEl9naew6YqNANpBkzvLAlun9jz29UGQEKz1vo

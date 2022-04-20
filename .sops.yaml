@@ -1,8 +1,6 @@
 ---
 creation_rules:
   - path_regex: (global|clusters)/.*\.sops\.ya?ml
-    encrypted_regex: '((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))'
+    encrypted_regex: "((?i)(pass|secret($|[^N])|key|token|^data$|^stringData))"
     # Personal, Flux
-    age: >-
-      age1uk0y2ahfavgsgqvrtg5a22w5gytpdmjuatxtcw6kntmxhlcgreesuwzw5s,
-      age1hawjtl6fm5czl8cun0ve7jvsmpqpn3qlxl2lnx7ndt7682tmva2qz3drfe
+    age: age1xsknylevdyrdq858yj57hc0caf477gqyqny8eyl7ekama7ffsf6qrrg28v
