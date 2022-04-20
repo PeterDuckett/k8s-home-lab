@@ -35,7 +35,7 @@ spec:
     #         port: 55954
 
     settings:
-      VPN_INTERFACE: wg0
+      # VPN_INTERFACE: wg0
       #VXLAN_ID: 43
       #VXLAN_IP_NETWORK: 172.16.0
       # VPN_BLOCK_OTHER_TRAFFIC: true
@@ -56,47 +56,47 @@ spec:
       netshoot:
         enabled: true
 
-      vpn:
-        enabled: true
-        type: wireguard
+      # vpn:
+      #   enabled: true
+      #   type: wireguard
 
-        wireguard:
-          image:
-            repository: ghcr.io/k8s-at-home/wireguard
-            tag: v1.0.20210914
-            pullPolicy: IfNotPresent
+      #   wireguard:
+      #     image:
+      #       repository: ghcr.io/k8s-at-home/wireguard
+      #       tag: v1.0.20210914
+      #       pullPolicy: IfNotPresent
 
-        #         securityContext:
-        #           runAsUser: 568
-        #           runAsGroup: 568
-        #           capabilities:
-        #             drop:
-        #               - "SYS_MODULE"
+      #   #         securityContext:
+      #   #           runAsUser: 568
+      #   #           runAsGroup: 568
+      #   #           capabilities:
+      #   #             drop:
+      #   #               - "SYS_MODULE"
 
-        env:
-          TZ: "Europe/London"
-        #           IPTABLES_BACKEND: nft
-        #           KILLSWITCH: "true"
+      #   env:
+      #     TZ: "Europe/London"
+      #   #           IPTABLES_BACKEND: nft
+      #   #           KILLSWITCH: "true"
 
-        #  #       configFileSecret: downloads-gateway-vpnconfig
+      #   #  #       configFileSecret: downloads-gateway-vpnconfig
 
-        configFile: |
-          [Interface]
-          PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
-          Address=10.14.0.2/8
-          MTU=1350
+      #   configFile: |
+      #     [Interface]
+      #     PrivateKey=IHKeNr7zkEZwJf6PRIPQ+SK7G8olE3vhwH4cs67x4mI=
+      #     Address=10.14.0.2/8
+      #     MTU=1350
 
-          [Peer]
-          PublicKey=o07k/2dsaQkLLSR0dCI/FUd3FLik/F/HBBcOGUkNQGo=
-          AllowedIPs=172.16.0.36/32
-          Endpoint=wgs.prod.surfshark.com:51820
-          PersistentKeepalive=25
+      #     [Peer]
+      #     PublicKey=o07k/2dsaQkLLSR0dCI/FUd3FLik/F/HBBcOGUkNQGo=
+      #     AllowedIPs=172.16.0.36/32
+      #     Endpoint=wgs.prod.surfshark.com:51820
+      #     PersistentKeepalive=25
 
-          [Peer]
-          PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
-          AllowedIPs=0.0.0.0/0
-          Endpoint=uk-lon.prod.surfshark.com:51820
-          PersistentKeepalive=25
+      #     [Peer]
+      #     PublicKey=iBJRXLZwXuWWrOZE1ZrAXEKMgV/z0WjG0Tks5rnWLBI=
+      #     AllowedIPs=0.0.0.0/0
+      #     Endpoint=uk-lon.prod.surfshark.com:51820
+      #     PersistentKeepalive=25
 
     #     # resources:
     #     #   requests:
