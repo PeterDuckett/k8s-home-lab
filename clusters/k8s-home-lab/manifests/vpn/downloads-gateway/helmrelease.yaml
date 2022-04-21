@@ -182,6 +182,21 @@ spec:
           -----END OpenVPN Static key V1-----
           </tls-auth>
 
+          script-security 2
+          up /vpn/up.sh
+          down /vpn/down.sh
+
+        scripts:
+          up: |-
+            #!/bin/bash
+            /etc/openvpn/up.sh
+            echo "connected" > /shared/vpnstatus
+
+          down: |-
+            #!/bin/bash
+            /etc/openvpn/down.sh
+            echo "disconnected" > /shared/vpnstatus
+
     #     # resources:
     #     #   requests:
     #     #     cpu: "0.001"
