@@ -195,12 +195,12 @@ spec:
           up: |-
             #!/bin/bash
             /etc/openvpn/up.sh
-            echo "connected" > /shared/vpnstatus
+ #           echo "connected" > /shared/vpnstatus
 
           down: |-
             #!/bin/bash
             /etc/openvpn/down.sh
-            echo "disconnected" > /shared/vpnstatus
+  #          echo "disconnected" > /shared/vpnstatus
 
     #     # resources:
     #     #   requests:
