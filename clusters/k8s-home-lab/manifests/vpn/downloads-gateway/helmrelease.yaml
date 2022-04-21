@@ -52,6 +52,11 @@ spec:
       gatewayLabel: setGateway
       gatewayAnnotation: setGateway
 
+    shared:
+      enabled: true
+      type: emptyDir
+      mountPath: /shared
+
     addons:
       netshoot:
         enabled: true
@@ -182,9 +187,9 @@ spec:
           -----END OpenVPN Static key V1-----
           </tls-auth>
 
-        #   script-security 2
-        #   up /vpn/up.sh
-        #   down /vpn/down.sh
+          script-security 2
+          up /vpn/up.sh
+          down /vpn/down.sh
 
         scripts:
           up: |-
