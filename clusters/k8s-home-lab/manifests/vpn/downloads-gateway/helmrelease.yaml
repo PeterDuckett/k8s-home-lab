@@ -52,11 +52,6 @@ spec:
       gatewayLabel: setGateway
       gatewayAnnotation: setGateway
 
-    shared:
-      enabled: true
-      type: emptyDir
-      mountPath: /shared
-
     addons:
       netshoot:
         enabled: true
