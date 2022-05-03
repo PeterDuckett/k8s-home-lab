@@ -31,6 +31,23 @@ spec:
     - "/opt/adguardhome/work"
     - "--no-check-update"
 
+    ingress:
+      main:
+        enabled: true
+        primary: true
+        #        ingressClassName: "traefik"
+        annotations:
+          kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt
+        hosts:
+          - host: &host "adguard-home.${INGRESS_DOMAIN}"
+            paths:
+              - path: /
+        tls:
+          - secretName: tls.adguard-home
+            hosts:
+              - *host
+
     service:
       main:
         primary: true
@@ -46,6 +63,11 @@ spec:
             port: 53
             protocol: TCP
             targetPort: 53
+          dns-tls:
+            enabled: true
+            port: 853
+            protocol: TCP
+            targetPort: 853
         externalTrafficPolicy: Local
       dns-udp:
         enabled: true
