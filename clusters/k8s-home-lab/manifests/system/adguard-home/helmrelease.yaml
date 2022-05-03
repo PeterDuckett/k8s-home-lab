@@ -78,6 +78,11 @@ spec:
             port: 53
             protocol: UDP
             targetPort: 53
+          dns-quic:
+            enabled: true
+            port: 784
+            protocol: UDP
+            targetPort: 784
         externalTrafficPolicy: Local
     
     persistence:
