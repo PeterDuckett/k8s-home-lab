@@ -1,0 +1,133 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: home-assistant
+  namespace: home-automation
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: home-assistant
+      version: 13.1.2
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: ghcr.io/home-assistant/home-assistant
+      tag: 2022.5.0
+
+    nameOverride: "home-assistant"
+
+    podAnnotations:
+      secret.reloader.stakater.com/reload: home-assistant-secrets
+
+    # initContainers:
+    #   wait-for-pg:
+    #     image: busybox:latest
+    #     imagePullPolicy: IfNotPresent
+    #     command:
+    #       [
+    #         "sh",
+    #         "-c",
+    #         'until nc -vz home-assistant-database-postgresql.home-automation 5432; do echo "Waiting for postgresql..."; sleep 3; done;',
+    #       ]
+
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8123
+
+    ingress:
+      main:
+        enabled: true
+        primary: true
+        #        ingressClassName: "traefik"
+        annotations:
+          kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt
+        hosts:
+          - host: &host "home-assistant.${INGRESS_DOMAIN}"
+            paths:
+              - path: /
+        tls:
+          - secretName: tls.home-assistant
+            hosts:
+              - *host
+
+    env:
+      TZ: "${TIMEZONE}"
+
+    envFrom:
+      - secretRef:
+          name: home-assistant-secrets
+
+    persistence:
+      config:
+        enabled: true
+        existingClaim: home-assistant-data
+
+    resources:
+      requests:
+        cpu: 126m
+        memory: 588M
+      limits:
+        memory: 1176M
+
+    # addons:
+    #   codeserver:
+    #     enabled: true
+
+    #     image:
+    #       repository: ghcr.io/k8s-at-home/code-server
+    #       tag: v4.3.0
+    #       pullPolicy: Always
+
+    #     git:
+    #       deployKeySecret: home-assistant-deploykey
+
+    #     ingress:
+    #       enabled: true
+    #       ingressClassName: "nginx"
+    #       annotations:
+    #         cert-manager.io/cluster-issuer: letsencrypt-production
+    #         external-dns.alpha.kubernetes.io/target: ingress.${INGRESS_DOMAIN}
+    #       hosts:
+    #         - host: &code-host "code.domo.${INGRESS_DOMAIN}"
+    #           paths:
+    #             - path: /
+    #       tls:
+    #         - secretName: tls.home-assistant-code
+    #           hosts:
+    #             - *code-host
+
+    #     args:
+    #       - --auth
+    #       - none
+    #       - --user-data-dir
+    #       - "/config/.vscode"
+    #       - --extensions-dir
+    #       - "/config/.vscode"
+
+    #     volumeMounts:
+    #       - name: config
+    #         mountPath: /config
+
+    #     resources:
+    #       requests:
+    #         cpu: 11m
+    #         memory: 443M
+    #       limits:
+    #         memory: 886M

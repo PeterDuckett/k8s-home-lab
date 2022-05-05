@@ -7,3 +7,4 @@ resources:
   - ./vpn.yaml
  # - ./media.yaml
   - ./downloads.yaml
+  - ./home-automation.yaml
