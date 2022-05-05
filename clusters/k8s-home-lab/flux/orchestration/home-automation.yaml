@@ -57,7 +57,7 @@ spec:
   #   - name: home-automation-mosquitto
   #   - name: home-automation-home-assistant-database
   interval: 5m
-  path: "./clusters/k8s-home-lab/manifests/home-assistant"
+  path: "./clusters/k8s-home-lab/manifests/home-automation/home-assistant"
   prune: true
   wait: true
   sourceRef:
