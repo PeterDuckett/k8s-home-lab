@@ -70,9 +70,9 @@ spec:
     env:
       TZ: "${TIMEZONE}"
 
-    envFrom:
-      - secretRef:
-          name: home-assistant-secrets
+    # envFrom:
+    #   - secretRef:
+    #       name: home-assistant-secrets
 
     persistence:
       config:
