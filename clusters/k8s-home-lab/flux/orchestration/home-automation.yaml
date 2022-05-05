@@ -49,7 +49,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: home-automation-home-assistant-core
+  name: home-automation-home-assistant
   namespace: flux-system
 spec:
   # dependsOn:
