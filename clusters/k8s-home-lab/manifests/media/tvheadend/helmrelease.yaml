@@ -46,6 +46,9 @@ spec:
             enabled: true
             protocol: TCP
             port: 9982
+    
+    securityContext:
+      privileged: true
 
     ingress:
       main:
