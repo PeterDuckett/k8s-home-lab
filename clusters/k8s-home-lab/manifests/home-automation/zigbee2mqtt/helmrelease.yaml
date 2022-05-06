@@ -61,7 +61,7 @@ spec:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
             - matchExpressions:
-                - key: feature.node.kubernetes.io/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
+                - key: feature.node.kubernetes.io/usb-02_1cf1_0030
                   operator: In
                   values:
                     - "true" 
