@@ -65,6 +65,12 @@ spec:
               - "device"
 
           custom:
+            - name: "wintV-quadhd"
+              matchOn:
+                - pciId:
+                    class: ["0400"]
+                    vendor: ["14f1"]
+
             - name: "intel-gpu"
               matchOn:
                 - pciId:
