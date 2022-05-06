@@ -83,3 +83,11 @@ spec:
                   operator: In
                   values:
                     - "true"
+    additionalVolumeMounts:
+      - name: dvb
+        mountPath: /dev/dvb
+
+    additionalVolumes:
+      - name: dvb
+        hostPath:
+          path: /dev/dvb
