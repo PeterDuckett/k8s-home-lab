@@ -73,3 +73,13 @@ spec:
       recordings:
         enabled: false
         mountPath: /recordings
+    
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/wintV-quadhd
+                  operator: In
+                  values:
+                    - "true"
