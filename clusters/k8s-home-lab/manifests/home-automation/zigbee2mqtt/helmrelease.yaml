@@ -56,6 +56,18 @@ spec:
             hosts:
               - *host
 
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
+                  operator: In
+                  values:
+                    - "true" 
+    securityContext:
+      privileged: false
+
     config:
       mqtt:
         base_topic: zigbee2mqtt
