@@ -85,5 +85,5 @@ spec:
             - name: "conbee"
               matchOn:
                 - usbId:
-                    class: ["1cf1"]
-                    vendor: ["0030"]
+                    class: ["0030"]
+                    vendor: ["1cf1"]
