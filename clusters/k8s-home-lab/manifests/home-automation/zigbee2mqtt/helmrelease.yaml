@@ -129,19 +129,19 @@ spec:
       limits:
         memory: 372M
 
-  valuesFrom:
-    - kind: Secret
-      name: zigbee2mqtt
-      valuesKey: mqtt_user
-      targetPath: config.mqtt.user
-      optional: false
-    - kind: Secret
-      name: zigbee2mqtt
-      valuesKey: mqtt_password
-      targetPath: config.mqtt.password
-      optional: false
-    - kind: Secret
-      name: zigbee2mqtt
-      valuesKey: zigbee_adapter_port
-      targetPath: config.serial.port
-      optional: false
+  # valuesFrom:
+  #   - kind: Secret
+  #     name: zigbee2mqtt
+  #     valuesKey: mqtt_user
+  #     targetPath: config.mqtt.user
+  #     optional: false
+  #   - kind: Secret
+  #     name: zigbee2mqtt
+  #     valuesKey: mqtt_password
+  #     targetPath: config.mqtt.password
+  #     optional: false
+  #   - kind: Secret
+  #     name: zigbee2mqtt
+  #     valuesKey: zigbee_adapter_port
+  #     targetPath: config.serial.port
+  #     optional: false
