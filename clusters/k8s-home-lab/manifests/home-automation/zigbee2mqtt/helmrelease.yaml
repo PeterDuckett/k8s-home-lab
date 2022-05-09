@@ -61,7 +61,7 @@ spec:
         requiredDuringSchedulingIgnoredDuringExecution:
           nodeSelectorTerms:
             - matchExpressions:
-                - key: feature.node.kubernetes.io/conbee
+                - key: feature.node.kubernetes.io/custom-conbee
                   operator: In
                   values:
                     - "true" 
