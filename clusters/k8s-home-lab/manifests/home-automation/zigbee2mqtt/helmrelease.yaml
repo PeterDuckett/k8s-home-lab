@@ -93,7 +93,7 @@ spec:
       serial:
         adapter: deconz
         # Location of your zigbee device
-        port: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
+        port: /dev/ttyACM0
 
       homeassistant: true
 
