@@ -12,4 +12,6 @@ spec:
     requests:
       storage: 1Gi
 
-  storageClassName: local-path
+  volumeName: radarr-config
+
+  storageClassName: manual
