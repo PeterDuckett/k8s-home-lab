@@ -13,3 +13,4 @@ spec:
       storage: 1Gi
 
   storageClassName: manual
+  volumeName: raddar-pv
