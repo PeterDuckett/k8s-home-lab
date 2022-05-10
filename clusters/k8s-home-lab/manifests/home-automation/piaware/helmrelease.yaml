@@ -19,11 +19,11 @@ spec:
   values:
     image:
     # -- image repository
-    repository: ghcr.io/home-assistant/piaware
+    #repository: ghcr.io/home-assistant/piaware
     # -- image tag
-    tag: v5.0
+    #tag: v5.0
     # -- image pull policy
-    pullPolicy: IfNotPresent
+    #pullPolicy: IfNotPresent
 
     # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
     # @default -- See below
