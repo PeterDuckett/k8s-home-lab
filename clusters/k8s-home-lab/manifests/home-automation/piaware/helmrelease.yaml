@@ -67,5 +67,6 @@ spec:
           nodeSelectorTerms:
             - matchExpressions:
                 - key: feature.node.kubernetes.io/custom-flightaware
+                  operator: In
                   values:
                     - "true" 
