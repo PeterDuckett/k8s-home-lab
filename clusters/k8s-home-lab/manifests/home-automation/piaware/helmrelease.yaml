@@ -15,14 +15,15 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
       interval: 5m
+
   values:
     image:
-    # -- image repository
-    repository: mikenye/piaware
-    # -- image tag
-    tag: "v5.0"
-    # -- image pull policy
-    pullPolicy: IfNotPresent
+      # -- image repository
+      repository: mikenye/piaware
+      # -- image tag
+      tag: "v5.0"
+      # -- image pull policy
+      pullPolicy: IfNotPresent
 
     # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
     # @default -- See below
