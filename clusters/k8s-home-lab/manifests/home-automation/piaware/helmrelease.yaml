@@ -34,6 +34,7 @@ spec:
       LONG: "${LONGITUDE}"
       receiver-type: "rtlsdr"
       mlat-results-format: "beast,connect,localhost:30104"
+      FEEDER_ID: "b30e104e-d3c1-48fe-b9f4-f80388cd70c6"
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
@@ -73,4 +74,4 @@ spec:
                 - key: feature.node.kubernetes.io/custom-flightaware
                   operator: In
                   values:
-                    - "true" 
+                    - "true"
