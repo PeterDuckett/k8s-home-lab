@@ -55,7 +55,7 @@ spec:
     # -- Configure a hostPathMount to mount a USB device in the container.
     # @default -- See values.yaml
     usb:
-      enabled: false
+      enabled: true
       type: hostPath
       hostPath: /dev/bus/usb/001/004
 
