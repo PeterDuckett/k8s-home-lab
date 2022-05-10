@@ -30,6 +30,8 @@ spec:
     env:
       # -- Set the container timezone
       TZ: "${TIMEZONE}"
+      LAT: "${LATITUDE}"
+      LONG: "${LONGITUDE}"
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
