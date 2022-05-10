@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/piaware
       # -- image tag
-      tag: "v7.2"
+      tag: "v7.1"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
