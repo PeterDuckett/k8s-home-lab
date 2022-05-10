@@ -87,3 +87,9 @@ spec:
                 - usbId:
                     device: ["0030"]
                     vendor: ["1cf1"]
+            
+            - name: "flightaware"
+              matchOn:
+                - usbId:
+                    device: ["2832"]
+                    vendor: ["0bda"]
