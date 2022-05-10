@@ -25,47 +25,47 @@ spec:
     # -- image pull policy
     pullPolicy: IfNotPresent
 
-  # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
-  # @default -- See below
-  env:
-    # -- Set the container timezone
-    TZ: "${TIMEZONE}"
+    # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
+    # @default -- See below
+    env:
+      # -- Set the container timezone
+      TZ: "${TIMEZONE}"
 
-  # -- Configures service settings for the chart.
-  # @default -- See values.yaml
-  service:
-    main:
-      ports:
-        http:
-          port: 8080
-
-  ingress:
-    # -- Enable and configure ingress settings for the chart under this key.
+    # -- Configures service settings for the chart.
     # @default -- See values.yaml
-    main:
-      enabled: false
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
 
-  securityContext:
-    # -- (bool) Privileged securityContext may be required if USB device is accessed directly through the host machine
-    privileged: true
+    ingress:
+      # -- Enable and configure ingress settings for the chart under this key.
+      # @default -- See values.yaml
+      main:
+        enabled: false
 
-  # -- Configure persistence settings for the chart under this key.
-  # @default -- See values.yaml
-  persistence:
-    # -- Configure a hostPathMount to mount a USB device in the container.
+    securityContext:
+      # -- (bool) Privileged securityContext may be required if USB device is accessed directly through the host machine
+      privileged: true
+
+    # -- Configure persistence settings for the chart under this key.
     # @default -- See values.yaml
-    usb:
-      enabled: true
-      type: hostPath
-      hostPath: /dev/bus/usb/001/004
+    persistence:
+      # -- Configure a hostPathMount to mount a USB device in the container.
+      # @default -- See values.yaml
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/bus/usb/001/004
 
-  # -- Affinity constraint rules to place the Pod on a specific node.
-  # [[ref]](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
-  affinity:
-    nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-          - matchExpressions:
-              - key: feature.node.kubernetes.io/custom-flightaware
-                values:
-                  - "true" 
+    # -- Affinity constraint rules to place the Pod on a specific node.
+    # [[ref]](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/custom-flightaware
+                  values:
+                    - "true" 
