@@ -20,7 +20,7 @@ spec:
       # -- image repository
       repository: ghcr.io/linuxserver/tvheadend
       # -- image tag
-      tag: version-eb59284b
+      tag: version-42078692
       # -- image pull policy
       pullPolicy: IfNotPresent
 
