@@ -10,10 +10,10 @@ spec:
     spec:
       chart: flightradar24
       version: 1.0.0
-      sourceRef:
-        kind: HelmRepository
-        name: k8s-at-home-charts
-        namespace: flux-system
+      # sourceRef:
+      #   kind: HelmRepository
+      #   name: k8s-at-home-charts
+      #   namespace: flux-system
       interval: 5m
 
   values:
@@ -34,3 +34,4 @@ spec:
       FEEDER_LONG: "${LONGITUDE}"
       FEEDER_ALT_FT: 305
       FR24_EMAIL:  "${EMAIL_POSTMASTER}"
+      MLAT: "yes"
