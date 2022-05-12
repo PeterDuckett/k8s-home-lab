@@ -9,5 +9,5 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 8Gi
+      storage: 10Gi
   volumeName: downloads-pv-volume
