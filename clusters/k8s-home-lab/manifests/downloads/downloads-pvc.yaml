@@ -1,15 +1,12 @@
----
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: lidarr-config-pvc
+  name: downloads-pv-claim
   namespace: downloads
 spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
-
   resources:
     requests:
-      storage: 1Gi
-  
-  storageClassName: local-path
+      storage: 8Gi
