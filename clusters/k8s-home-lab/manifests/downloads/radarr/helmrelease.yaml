@@ -34,7 +34,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: radarr-config-pvc
+        existingClaim: downloads-radarr-config-pv-claim
       media:
         enabled: false
         type: custom
