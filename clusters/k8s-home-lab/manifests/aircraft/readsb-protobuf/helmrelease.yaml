@@ -52,7 +52,7 @@ spec:
           beastoutput:
             enabled: true
             port: 30005
-            protocol: tcp
+            protocol: TCP
 
     ingress:
       # -- Enable and configure ingress settings for the chart under this key.
