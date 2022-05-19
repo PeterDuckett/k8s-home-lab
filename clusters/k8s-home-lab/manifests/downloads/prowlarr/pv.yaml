@@ -10,5 +10,5 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/srv/docker/downloads/prowlarr/"
+    path: "/srv/docker/k3s/prowlarr/"
   persistentVolumeReclaimPolicy: Retain
