@@ -8,3 +8,4 @@ resources:
   - ./media.yaml
   - ./downloads.yaml
   - ./home-automation.yaml
+  - ./aircraft.yaml
