@@ -68,10 +68,11 @@ spec:
     ingress:
       main:
         enabled: true
-        # ingressClassName: "traefik"
+        primary: true
+        #        ingressClassName: "traefik"
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt
         hosts:
           - host: &host "qbittorrent.${INGRESS_DOMAIN}"
             paths:
