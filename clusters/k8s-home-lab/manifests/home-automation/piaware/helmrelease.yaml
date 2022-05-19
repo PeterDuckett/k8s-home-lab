@@ -32,7 +32,9 @@ spec:
       TZ: "${TIMEZONE}"
       LAT: "${LATITUDE}"
       LONG: "${LONGITUDE}"
-      receiver-type: "rtlsdr"
+      receiver-type: "relay"
+      BEASTHOST: beastoutput
+      BEASTPORT: 30005
       mlat-results-format: "beast,connect,localhost:30104"
       FEEDER_ID: "b30e104e-d3c1-48fe-b9f4-f80388cd70c6"
 
