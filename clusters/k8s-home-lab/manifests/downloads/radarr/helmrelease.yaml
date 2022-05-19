@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: radarr
-      version: 16.0.1
+      version: 16.2.3
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -17,8 +17,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/radarr-develop
-      tag: v4.1.0.6095
+      repository: ghcr.io/k8s-at-home/radarr
+      tag: v4.1.0.6175
       pullPolicy: Always
 
     podSecurityContext:
