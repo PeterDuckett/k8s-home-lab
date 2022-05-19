@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: peterduckett-charts
+  namespace: flux-system
+spec:
+  interval: 30m
+  url: https://peterduckett.github.io/k8s-home-chart/
+  timeout: 3m

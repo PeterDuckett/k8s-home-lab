@@ -6,3 +6,4 @@ resources:
   - ./k8s-at-home-charts.yaml
   - ./kubernetes-sigs-nfd-charts.yaml
   - ./stakater-charts.yaml
+  - ./peterduckett.yaml
