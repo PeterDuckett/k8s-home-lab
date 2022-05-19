@@ -111,6 +111,38 @@ spec:
     kind: GitRepository
     name: home-ops
 ---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: downloads-sonarr
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: downloads-namespace
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/downloads/sonarr"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: downloads-bazarr
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: downloads-namespace
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/downloads/bazarr"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
 # apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 # kind: Kustomization
 # metadata:

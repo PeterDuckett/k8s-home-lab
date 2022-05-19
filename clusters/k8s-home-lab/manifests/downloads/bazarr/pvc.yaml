@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: downloads-bazarr-config-pv-claim
+  namespace: downloads
+spec:
+  accessModes:
+    - ReadWriteOnce
+
+  resources:
+    requests:
+      storage: 1Gi
+
+  storageClassName: ""
+  volumeName: downloads-bazarr-config-pv-volume

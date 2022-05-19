@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sonarr
+  name: lidarr
   namespace: downloads
 spec:
   interval: 5m
   chart:
     spec:
-      chart: sonarr
-      version: 16.2.3
+      chart: bazarr
+      version: 10.5.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -17,13 +17,11 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/sonarr
-      tag: v3.0.8.1507
-      pullPolicy: Always
+      repository: ghcr.io/k8s-at-home/bazarr
+      tag: v1.0.3
 
-    podSecurityContext:
-      supplementalGroups:
-        - 65539
+    podAnnotations:
+      setGateway: "true"
 
     env:
       TZ: "${TIMEZONE}"
@@ -31,33 +29,35 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: downloads-sonarr-config-pv-claim
+        existingClaim: downloads-bazarr-config-pv-claim
       media:
         enabled: false
-        type: nfs
-        server: "${NAS_ADDRESS}"
-        path: /volume1/Media
+        type: custom
+        volumeSpec:
+          nfs:
+            server: "${NAS_ADDRESS}"
+            path: /volume1/Media
         mountPath: /data/nas-media
 
     ingress:
       main:
         enabled: true
-        #       ingressClassName: "traefik"
+        # ingressClassName: "traefik"
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt-production
         hosts:
-          - host: &host "sonarr.peterduckett.me"
+          - host: &host "bazarr.${INGRESS_DOMAIN}"
             paths:
               - path: /
         tls:
-          - secretName: tls.sonarr
+          - secretName: tls.bazarr
             hosts:
               - *host
 
     resources:
       requests:
-        cpu: 23m
-        memory: 324M
+        cpu: "0.04"
+        memory: "256M"
       limits:
-        memory: 728M
+        memory: "512M"
