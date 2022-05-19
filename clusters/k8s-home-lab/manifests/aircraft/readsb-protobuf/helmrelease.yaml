@@ -89,12 +89,12 @@ spec:
       autogain:
         enabled: true
         mountPath: /run/autogain
-        existingClaim:
+        existingClaim: aircraft-autograin-pv-claim
 
       collectd:
         enabled: true
         mountPath: /run/collectd
-        existingClaim:
+        existingClaim: aircraft-collectd-pv-volume
 
 
     # -- Affinity constraint rules to place the Pod on a specific node.
