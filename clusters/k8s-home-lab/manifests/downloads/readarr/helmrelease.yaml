@@ -24,13 +24,16 @@ spec:
       supplementalGroups:
         - 65539
 
+    podAnnotations:
+      setGateway: "true"
+
     env:
-      TZ: "Europe/London"
+      TZ: "${TIMEZONE}"
 
     persistence:
       config:
         enabled: true
-        existingClaim: readarr-config-pvc
+        existingClaim: downloads-readarr-config-pv-claim
       media:
         enabled: false
         type: custom
@@ -43,18 +46,19 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "traefik"
+        primary: true
+        #        ingressClassName: "traefik"
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt
         hosts:
-          - host: "readarr.peterduckett.me"
+          - host: &host "readarr.${INGRESS_DOMAIN}"
             paths:
               - path: /
         tls:
           - secretName: tls.readarr
             hosts:
-              - readarr.peterduckett.me
+              - *host
 
     resources:
       requests:
