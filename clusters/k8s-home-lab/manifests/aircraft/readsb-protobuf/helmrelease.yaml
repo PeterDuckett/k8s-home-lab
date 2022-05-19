@@ -94,7 +94,7 @@ spec:
       collectd:
         enabled: true
         mountPath: /run/collectd
-        existingClaim: aircraft-collectd-pv-volume
+        existingClaim: aircraft-collectd-pv-claim
 
 
     # -- Affinity constraint rules to place the Pod on a specific node.
