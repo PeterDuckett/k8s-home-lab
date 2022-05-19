@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: downloads-prowlarr-config-pv-volume
+spec:
+  storageClassName: ""
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/srv/docker/downloads/prowlarr/"
+  persistentVolumeReclaimPolicy: Retain
