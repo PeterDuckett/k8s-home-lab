@@ -2,15 +2,13 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: qbittorrent-config-pvc
+  name: downloads-qbittorrent-config-pv-claim
   namespace: downloads
 spec:
+  storageClassName: ""
   accessModes:
     - ReadWriteOnce
-
   resources:
     requests:
       storage: 1Gi
-
-  
-  storageClassName: local-path
+    volumeName: downloads-qbittorrent-config-pv-volume

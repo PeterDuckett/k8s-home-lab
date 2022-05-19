@@ -34,13 +34,13 @@ spec:
       automaticPortSetup: false
 
     env:
-      TZ: "Europe/London"
+      TZ: "${TIMEZONE}"
       UMASK: "022"
 
     persistence:
       config:
         enabled: true
-        existingClaim: qbittorrent-config-pvc
+        existingClaim: downloads-qbittorrent-config-pv-claim
       media:
         enabled: false
         type: custom
@@ -58,13 +58,13 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
         hosts:
-          - host: "qbittorrent.peterduckett.me"
+          - host: &host "qbittorrent.${INGRESS_DOMAIN}"
             paths:
               - path: /
         tls:
           - secretName: tls.qbittorrent
             hosts:
-              - qbittorrent.peterduckett.me
+              - *host
 
     resources:
       requests:
