@@ -37,6 +37,21 @@ spec:
       TZ: "${TIMEZONE}"
       UMASK: "022"
 
+    service:
+      main:
+        ports:
+          http:
+            port: 8080
+      bittorrent:
+        enabled: false
+        type: ClusterIP
+        ports:
+          bittorrent:
+            enabled: true
+            port: 6881
+            protocol: TCP
+            targetPort: 6881
+
     persistence:
       config:
         enabled: true
