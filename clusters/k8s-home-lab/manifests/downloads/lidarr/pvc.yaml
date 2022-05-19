@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: downloads-nzbget-config-pv-claim
+  name: downloads-lidarr-config-pv-claim
   namespace: downloads
 spec:
   accessModes:
@@ -11,6 +11,6 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  
+
   storageClassName: ""
-  volumeName: downloads-nzbget-config-pv-volume
+  volumeName: downloads-lidarr-config-pv-volume

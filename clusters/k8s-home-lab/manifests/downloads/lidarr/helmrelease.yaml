@@ -33,7 +33,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: downloads-nzbget-config-pv-claim
+        existingClaim: downloads-lidarr-config-pv-claim
       media:
         enabled: false
         type: custom
