@@ -48,8 +48,9 @@ spec:
             path: /volume1/Media
         mountPath: /data/nas-media
       downloads:
-        enabled: false
+        enabled: true
         mountPath: /downloads
+        existingClaim: downloads-pv-claim
 
     podAnnotations:
       setGateway: "true"
