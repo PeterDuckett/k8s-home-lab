@@ -33,7 +33,7 @@ spec:
       LAT: "${LATITUDE}"
       LONG: "${LONGITUDE}"
       receiver-type: "relay"
-      BEASTHOST: beastoutput
+      BEASTHOST: 	readsb-protobuf-test
       BEASTPORT: 30005
       mlat-results-format: "beast,connect,localhost:30104"
       FEEDER_ID: "b30e104e-d3c1-48fe-b9f4-f80388cd70c6"
@@ -62,7 +62,7 @@ spec:
       # -- Configure a hostPathMount to mount a USB device in the container.
       # @default -- See values.yaml
       usb:
-        enabled: true
+        enabled: false
         type: hostPath
         hostPath: /dev/bus/usb/001/004
 
