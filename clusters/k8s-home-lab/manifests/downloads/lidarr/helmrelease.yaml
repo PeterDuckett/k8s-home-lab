@@ -30,7 +30,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: lidarr-config-pvc
+        existingClaim: downloads-nzbget-config-pv-claim
       media:
         enabled: false
         type: custom
@@ -43,7 +43,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "traefik"
+        # ingressClassName: "traefik"
         annotations:
           kubernetes.io/ingress.class: "traefik"
           cert-manager.io/cluster-issuer: letsencrypt-production
