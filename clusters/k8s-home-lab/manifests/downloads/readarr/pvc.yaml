@@ -11,4 +11,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-    volumeName: downloads-readarr-config-pv-volume
+  volumeName: downloads-readarr-config-pv-volume
