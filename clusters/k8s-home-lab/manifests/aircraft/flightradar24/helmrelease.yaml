@@ -19,7 +19,7 @@ spec:
   values:
     image:
       # -- image repository
-      repository: mikenye/flightradar24
+      repository: mikenye/fr24feed
       # -- image tag
       tag: "1.0.29-8"
       # -- image pull policy
