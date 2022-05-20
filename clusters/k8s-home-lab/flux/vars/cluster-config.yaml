@@ -5,8 +5,8 @@ metadata:
   name: cluster-config
   namespace: flux-system
 data:
-#  CLUSTER_NAME: cluster-0
-#  CLUSTER_ID: "1"
+  #  CLUSTER_NAME: cluster-0
+  #  CLUSTER_ID: "1"
 
   TIMEZONE: "Europe/London"
 
@@ -14,13 +14,17 @@ data:
 
   LONGITUDE: "-1.19837698783953"
 
+  ALTITUDE_FT: "305.118"
+
+  ALTITUDE_M: "93"
+
   # Networks
 #  NETWORK_SERVERS_CIDR: 10.1.1.0/24
 #  NETWORK_K8S_POD_CIDR: 10.244.0.0/16
 #  NETWORK_K8S_SERVICE_CIDR: 10.96.0.0/12
 #  NETWORK_BGP_SVC_RANGE: 10.45.0.0/16
 
-  # Loadbalancer IP's
+# Loadbalancer IP's
 #  LB_INGRESS: 10.45.0.1
 #  LB_VECTOR_AGGREGATOR: 10.45.0.2
 #  LB_UNIFI: 10.45.0.4
