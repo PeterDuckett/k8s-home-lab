@@ -29,7 +29,6 @@ spec:
         # -- Configures service settings for the chart.
     # @default -- See values.yaml
     service:
-      enabled: false
       main:
         ports:
           http:
