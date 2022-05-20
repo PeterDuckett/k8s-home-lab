@@ -23,7 +23,17 @@ spec:
       # -- image tag
       tag: "1.0.29-8"
       # -- image pull policy
-      pullPolicy: IfNotPresent
+      pullPolicy:
+        IfNotPresent
+
+        # -- Configures service settings for the chart.
+    # @default -- See values.yaml
+    service:
+      enabled: false
+      main:
+        ports:
+          http:
+            port: 8754
 
     # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
     # @default -- See below
