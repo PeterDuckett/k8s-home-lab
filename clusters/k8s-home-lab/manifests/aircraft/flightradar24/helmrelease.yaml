@@ -52,4 +52,5 @@ spec:
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
       FR24_EMAIL: "${EMAIL_POSTMASTER}"
+      FR24KEY:
       MLAT: true
