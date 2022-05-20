@@ -23,9 +23,10 @@ spec:
       # -- image tag
       tag: "1.0.29-8"
       # -- image pull policy
-      pullPolicy:
-        IfNotPresent
+      pullPolicy: IfNotPresent
 
+      command:
+        ["/scripts/signup.sh"]
         # -- Configures service settings for the chart.
     # @default -- See values.yaml
     service:
