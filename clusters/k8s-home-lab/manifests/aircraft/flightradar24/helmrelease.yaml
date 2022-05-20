@@ -2,13 +2,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: readsb-protobuf
+  name: flightradar24
   namespace: aircraft
 spec:
   interval: 5m
   chart:
     spec:
-      chart: test
+      chart: flightradar24
       version: 0.1.0
       sourceRef:
         kind: HelmRepository
@@ -19,9 +19,9 @@ spec:
   values:
     image:
       # -- image repository
-      repository: mikenye/readsb-protobuf
+      repository: mikenye/flightradar24
       # -- image tag
-      tag: "v4.0.3"
+      tag: "1.0.29-8"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
@@ -30,13 +30,10 @@ spec:
     env:
       # -- Set the container timezone
       TZ: "${TIMEZONE}"
-      READSB_DCFILTER: true
-      READSB_DEVICE_TYPE: rtlsdr
-      READSB_FIX: true
-      READSB_GAIN: autogain
-      READSB_LAT: "${LATITUDE}"
-      READSB_LON: "${LONGITUDE}"
-      READSB_MODEAC: true
-      READSB_RX_LOCATION_ACCURACY: 2
-      READSB_STATS_RANGE: true
-      READSB_NET_ENABLE: true
+      FEEDER_LAT: "${LATITUDE}"
+      FEEDER_LONG: "${LONGITUDE}"
+      FEEDER_ALT_FT: "{ALTITUDE_FT}"
+      BEASTHOST: readsb-protobuf-test
+      BEASTPORT: 30005
+      FR24_EMAIL: "${EMAIL_POSTMASTER}"
+      MLAT: true
