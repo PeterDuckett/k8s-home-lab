@@ -69,4 +69,4 @@ spec:
       ALT: "${ALTITUDE_M}"
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
-      #SHARING_KEY: "50fed45aa02cbbfa2819d58b7bcd2c46"
+      SHARING_KEY: "64c4558b9056370a8908c362d5c08f23"
