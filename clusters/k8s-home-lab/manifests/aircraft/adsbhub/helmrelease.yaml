@@ -68,4 +68,4 @@ spec:
       LONG: "${LONGITUDE}"
       SBSHOST: readsb-protobuf-test
       SBSPORT: 30003
-      # CLIENTKEY:
+      CLIENTKEY: "[Ia++b#Wnh5Rd>;c-4v!Tp<bs]lh+0^M~xk%ghUSQGUVAraF_N$T}<arYnn[$e2PWPZ.#dRU-oE#8V#)xcCNE~kJUN45?0+T.rPiaPVuN}k^eec<:2K%$;ED"

@@ -49,6 +49,10 @@ spec:
           http:
             enabled: true
             port: 8080
+          basestation:
+            enabled: true
+            port: 30003
+            protocol: TCP
           beastoutput:
             enabled: true
             port: 30005
@@ -85,7 +89,7 @@ spec:
         enabled: true
         type: hostPath
         hostPath: /dev/bus/usb/001/004
-      
+
       autogain:
         enabled: true
         mountPath: /run/autogain
@@ -95,7 +99,6 @@ spec:
         enabled: true
         mountPath: /run/collectd
         existingClaim: aircraft-collectd-pv-claim
-
 
     # -- Affinity constraint rules to place the Pod on a specific node.
     # [[ref]](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
