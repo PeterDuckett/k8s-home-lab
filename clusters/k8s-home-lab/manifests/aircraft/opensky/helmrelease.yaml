@@ -69,4 +69,4 @@ spec:
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
       OPENSKY_USERNAME: "PeterDuckett"
-      #OPENSKY_SERIAL:
+      OPENSKY_SERIAL: -1408231757
