@@ -33,11 +33,11 @@ spec:
         command: ["sh", "-c", "/scripts/signup.sh"]
         env:
           # -- Set the container timezone
-          TZ: "Europe/London"
-          FEEDER_LAT: "52.646138412635"
-          FEEDER_LONG: "-1.19837698783953"
-          FEEDER_ALT_FT: "305.118"
-          FR24_EMAIL: "peter.james.duckett@googlemail.com"
+          - TZ: "Europe/London"
+          - FEEDER_LAT: "52.646138412635"
+          - FEEDER_LONG: "-1.19837698783953"
+          - FEEDER_ALT_FT: "305.118"
+          - FR24_EMAIL: "peter.james.duckett@googlemail.com"
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
