@@ -27,7 +27,7 @@ spec:
 
     initContainers:
       signup:
-        image: mikenye/fr24feed
+        image: mikenye/fr24feed:1.0.29-8
         command: ["sh", "-c", "/scripts/signup.sh"]
 
     # -- Configures service settings for the chart.
