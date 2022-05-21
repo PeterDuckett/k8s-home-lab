@@ -27,7 +27,7 @@ spec:
 
     initContainers:
       signup:
-        image: busybox
+        image: mikenye/fr24feed
         command: ["sh", "-c", "/scripts/signup.sh"]
 
     # -- Configures service settings for the chart.
