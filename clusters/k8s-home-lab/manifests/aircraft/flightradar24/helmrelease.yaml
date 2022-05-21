@@ -30,12 +30,13 @@ spec:
         image: mikenye/fr24feed:1.0.29-8
         command: ["sh", "-c", "/scripts/signup.sh"]
         env:
-        # -- Set the container timezone
-        TZ: "${TIMEZONE}"
-        FEEDER_LAT: "${LATITUDE}"
-        FEEDER_LONG: "${LONGITUDE}"
-        FEEDER_ALT_FT: "{ALTITUDE_FT}"
-        FR24_EMAIL: "${EMAIL_POSTMASTER}"
+          # -- Set the container timezone
+          TZ: "${TIMEZONE}"
+          FEEDER_LAT: "${LATITUDE}"
+          FEEDER_LONG: "${LONGITUDE}"
+          FEEDER_ALT_FT: "{ALTITUDE_FT}"
+          BEASTHOST: readsb-protobuf-test
+          FR24_EMAIL: "${EMAIL_POSTMASTER}"
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
