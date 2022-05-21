@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/radarbox
       # -- image tag
-      tag: "v1.0.7-20220512134600_nohealthcheck"
+      tag: "v1.0.7-20220424164900"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
