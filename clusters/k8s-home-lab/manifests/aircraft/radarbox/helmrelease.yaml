@@ -48,10 +48,10 @@ spec:
     # @default -- See values.yaml
     service:
       main:
-        enabled: true
         ports:
-          # http:
-          #   port: 8754
+          http:
+            enabled: false
+            port: 8754
           beastoutput:
             enabled: true
             port: 30105
