@@ -2,14 +2,14 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: radarr
+  name: bazarr
   namespace: downloads
 spec:
   interval: 5m
   chart:
     spec:
-      chart: radarr
-      version: 16.2.3
+      chart: bazarr
+      version: 10.5.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -17,13 +17,8 @@ spec:
       interval: 5m
   values:
     image:
-      repository: ghcr.io/k8s-at-home/radarr
-      tag: v4.1.0.6175
-      pullPolicy: Always
-
-    podSecurityContext:
-      supplementalGroups:
-        - 65539
+      repository: ghcr.io/k8s-at-home/bazarr
+      tag: v1.0.3
 
     podAnnotations:
       setGateway: "true"
@@ -34,7 +29,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: downloads-radarr-config-pv-claim
+        existingClaim: downloads-bazarr-config-pv-claim
       media:
         enabled: false
         type: custom
@@ -47,16 +42,16 @@ spec:
     ingress:
       main:
         enabled: true
-        #       ingressClassName: "traefik"
+        # ingressClassName: "traefik"
         annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
+          cert-manager.io/cluster-issuer: letsencrypt
         hosts:
-          - host: &host "radarr.peterduckett.me"
+          - host: &host "bazarr.${INGRESS_DOMAIN}"
             paths:
               - path: /
         tls:
-          - secretName: tls.radarr
+          - secretName: tls.bazarr
             hosts:
               - *host
 
@@ -65,4 +60,4 @@ spec:
         cpu: "0.04"
         memory: "256M"
       limits:
-        memory: "1024M"
+        memory: "512M"

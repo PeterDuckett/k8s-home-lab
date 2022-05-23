@@ -1,0 +1,70 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: planefinder
+  namespace: aircraft
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: planefinder
+      version: 0.1.0
+      sourceRef:
+        kind: HelmRepository
+        name: peterduckett-charts
+        namespace: flux-system
+      interval: 5m
+
+  values:
+    image:
+      # -- image repository
+      repository: mikenye/planefinder
+      # -- image tag
+      tag: "5.0.161"
+      # -- image pull policy
+      pullPolicy: IfNotPresent
+
+      #command: ["sh", "-c", "/scripts/signup.sh"]
+
+    # initContainers:
+    #   signup:
+    #     image: mikenye/fr24feed:1.0.29-8
+    #     command: ["sh", "-c", "/scripts/signup.sh"]
+    #     env:
+    #       # -- Set the container timezone
+    #       - name: TZ
+    #         value: "Europe/London"
+    #       - name: FEEDER_LAT
+    #         value: "52.646138412635"
+    #       - name: FEEDER_LONG
+    #         value: "-1.19837698783953"
+    #       - name: FEEDER_ALT_FT
+    #         value: "305.118"
+    #       - name: FR24_EMAIL
+    #         value: "peter.james.duckett@googlemail.com"
+
+    # -- Configures service settings for the chart.
+    # @default -- See values.yaml
+    service:
+      main:
+        ports:
+          http:
+            port: 8754
+
+    ingress:
+      # -- Enable and configure ingress settings for the chart under this key.
+      # @default -- See values.yaml
+      main:
+        enabled: false
+
+    # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
+    # @default -- See below
+    env:
+      # -- Set the container timezone
+      TZ: "${TIMEZONE}"
+      LAT: "${LATITUDE}"
+      LONG: "${LONGITUDE}"
+      BEASTHOST: readsb-protobuf-test
+      BEASTPORT: 30005
+      #SHARECODE:

@@ -11,4 +11,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-    volumeName: downloads-sonarr-config-pv-volume
+  volumeName: downloads-sonarr-config-pv-volume

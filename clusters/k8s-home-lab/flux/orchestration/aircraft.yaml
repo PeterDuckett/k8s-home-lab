@@ -28,3 +28,88 @@ spec:
   sourceRef:
     kind: GitRepository
     name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aircraft-flightradar24
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: home-automation-namespace
+  #   - name: home-automation-mosquitto
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/aircraft/flightradar24"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aircraft-opensky
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: home-automation-namespace
+  #   - name: home-automation-mosquitto
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/aircraft/opensky"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aircraft-adsbexchange
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: home-automation-namespace
+  #   - name: home-automation-mosquitto
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/aircraft/adsbexchange"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aircraft-adsbhub
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: home-automation-namespace
+  #   - name: home-automation-mosquitto
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/aircraft/adsbhub"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: aircraft-radarbox
+  namespace: flux-system
+spec:
+  # dependsOn:
+  #   - name: home-automation-namespace
+  #   - name: home-automation-mosquitto
+  interval: 5m
+  path: "./clusters/k8s-home-lab/manifests/aircraft/radarbox"
+  prune: true
+  wait: true
+  sourceRef:
+    kind: GitRepository
+    name: home-ops
