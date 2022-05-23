@@ -53,7 +53,7 @@ spec:
             enabled: false
             port: 8754
           rawoutput:
-            enabled: true
+            enabled: false
             port: 30334
             protocol: TCP
 

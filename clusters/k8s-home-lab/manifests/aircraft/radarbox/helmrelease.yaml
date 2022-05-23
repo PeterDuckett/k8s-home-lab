@@ -53,7 +53,7 @@ spec:
             enabled: false
             port: 8754
           beastoutput:
-            enabled: true
+            enabled: false
             port: 30105
             protocol: TCP
 
