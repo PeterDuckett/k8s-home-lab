@@ -40,6 +40,7 @@ spec:
       READSB_RX_LOCATION_ACCURACY: 2
       READSB_STATS_RANGE: true
       READSB_NET_ENABLE: true
+      READSB_NET_CONNECTOR: mlathub,30105,beast_in
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml

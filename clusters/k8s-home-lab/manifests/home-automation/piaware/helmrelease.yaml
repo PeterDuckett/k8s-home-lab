@@ -45,6 +45,10 @@ spec:
         ports:
           http:
             port: 8080
+          beastoutput:
+            enabled: true
+            port: 30105
+            protocol: TCP
 
     ingress:
       # -- Enable and configure ingress settings for the chart under this key.
