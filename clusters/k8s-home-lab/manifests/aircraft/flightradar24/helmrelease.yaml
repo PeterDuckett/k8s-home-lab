@@ -52,7 +52,7 @@ spec:
           http:
             enabled: false
             port: 8754
-          basestationoutput:
+          bsoutput:
             enabled: true
             port: 30003
             protocol: TCP
