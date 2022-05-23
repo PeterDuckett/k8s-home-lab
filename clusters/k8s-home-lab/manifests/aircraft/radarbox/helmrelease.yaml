@@ -74,3 +74,4 @@ spec:
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
       SHARING_KEY: "64c4558b9056370a8908c362d5c08f23"
+      ENABLE_MLAT: true
