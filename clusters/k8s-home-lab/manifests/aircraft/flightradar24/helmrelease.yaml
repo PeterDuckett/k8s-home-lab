@@ -48,7 +48,6 @@ spec:
     # @default -- See values.yaml
     service:
       main:
-        enabled: false
         ports:
           http:
             enabled: false
