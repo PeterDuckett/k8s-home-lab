@@ -51,9 +51,9 @@ spec:
         ports:
           http:
             port: 8754
-          beastoutput:
+          basestationoutput:
             enabled: true
-            port: 30105
+            port: 30003
             protocol: TCP
 
     ingress:
