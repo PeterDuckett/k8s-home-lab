@@ -52,9 +52,9 @@ spec:
           http:
             enabled: false
             port: 8754
-          bsoutput:
+          rawoutput:
             enabled: true
-            port: 30003
+            port: 30334
             protocol: TCP
 
     ingress:
