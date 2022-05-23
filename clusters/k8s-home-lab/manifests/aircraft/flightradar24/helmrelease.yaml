@@ -50,6 +50,7 @@ spec:
       main:
         ports:
           http:
+            enabled: false
             port: 8754
           basestationoutput:
             enabled: true
