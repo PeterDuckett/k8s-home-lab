@@ -82,6 +82,6 @@ spec:
                   values:
                     - "true"
 
-    resources:
-      requests:
-        cpu: 2000m
+    # resources:
+    #   requests:
+    #     cpu: 2000m
