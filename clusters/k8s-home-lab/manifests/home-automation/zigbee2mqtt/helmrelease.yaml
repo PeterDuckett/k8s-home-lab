@@ -61,15 +61,16 @@ spec:
             hosts:
               - *host
 
-    # affinity:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #         - matchExpressions:
-    #             - key: feature.node.kubernetes.io/custom-conbee
-    #               operator: In
-    #               values:
-    #                 - "true" 
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: feature.node.kubernetes.io/custom-conbee
+                  operator: In
+                  values:
+                    - "true" 
+
     securityContext:
       privileged: true
 
@@ -93,7 +94,7 @@ spec:
       serial:
         adapter: deconz
         # Location of your zigbee device
-        port: /dev/ttyACM0
+        port: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
 
       homeassistant: true
 
