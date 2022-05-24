@@ -97,18 +97,18 @@ spec:
 
         # git:
         #   deployKeySecret: home-assistant-deploykey
-
-        annotations:
-          kubernetes.io/ingress.class: "traefik"
-          cert-manager.io/cluster-issuer: letsencrypt
-        hosts:
-          - host: &host "code-home-assistant.${INGRESS_DOMAIN}"
-            paths:
-              - path: /
-        tls:
-          - secretName: tls.code-home-assistant
-            hosts:
-              - *host
+        ingress:
+          annotations:
+            kubernetes.io/ingress.class: "traefik"
+            cert-manager.io/cluster-issuer: letsencrypt
+          hosts:
+            - host: &host "code-home-assistant.${INGRESS_DOMAIN}"
+              paths:
+                - path: /
+          tls:
+            - secretName: tls.code-home-assistant
+              hosts:
+                - *host
 
         args:
           - --auth
