@@ -61,15 +61,15 @@ spec:
             hosts:
               - *host
 
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-            - matchExpressions:
-                - key: feature.node.kubernetes.io/custom-conbee
-                  operator: In
-                  values:
-                    - "true" 
+    # affinity:
+    #   nodeAffinity:
+    #     requiredDuringSchedulingIgnoredDuringExecution:
+    #       nodeSelectorTerms:
+    #         - matchExpressions:
+    #             - key: feature.node.kubernetes.io/custom-conbee
+    #               operator: In
+    #               values:
+    #                 - "true" 
     securityContext:
       privileged: true
 
