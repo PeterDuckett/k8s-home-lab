@@ -70,4 +70,4 @@ spec:
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
       SITENAME: Glenfield
-      # UUID:
+      UUID: 533255ab-c90c-4efb-a8f7-e6856d867aff
