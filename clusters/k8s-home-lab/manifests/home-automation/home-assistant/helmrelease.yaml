@@ -98,6 +98,7 @@ spec:
         # git:
         #   deployKeySecret: home-assistant-deploykey
         ingress:
+          enabled: true
           annotations:
             kubernetes.io/ingress.class: "traefik"
             cert-manager.io/cluster-issuer: letsencrypt
