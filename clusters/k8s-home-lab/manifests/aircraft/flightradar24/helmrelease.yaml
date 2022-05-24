@@ -72,4 +72,4 @@ spec:
       BEASTPORT: 30005
       FR24_EMAIL: "${EMAIL_POSTMASTER}"
       FR24KEY: 9793b4ce1c5cc412
-      MLAT: true
+      MLAT: yes
