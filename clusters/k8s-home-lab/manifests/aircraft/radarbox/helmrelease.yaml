@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/radarbox
       # -- image tag
-      tag: "0.4.3-20210909231001"
+      tag: "v1.0.7-20220512134600"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
@@ -74,5 +74,5 @@ spec:
       ALT: "${ALTITUDE_M}"
       BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
-      #SHARING_KEY: "64c4558b9056370a8908c362d5c08f23"
+      SHARING_KEY: "137a38f90c5e89a9135d74d51e45a30e"
       ENABLE_MLAT: true
