@@ -132,10 +132,10 @@ spec:
         homeassistant_discovery_topic: 'homeassistant'
         homeassistant_status_topic: 'homeassistant/status'
       # Both of these need to be enabled for the webui
-      frontend:
-        port: 8080
-      experimental:
-        new_api: true
+    frontend:
+      port: 8080
+    experimental:
+      new_api: true
 
     resources:
       requests:
