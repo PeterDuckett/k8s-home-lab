@@ -44,6 +44,7 @@ spec:
       main:
         ports:
           http:
+            enabled: false
             port: 8080
           beastoutput:
             enabled: true
