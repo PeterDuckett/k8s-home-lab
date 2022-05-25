@@ -47,14 +47,16 @@ spec:
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
     service:
-      ports:
-        http:
-          enabled: false
-          port: 8754
-        beastoutput:
-          enabled: true
-          port: 30105
-          protocol: TCP
+      main:
+        #enabled: false
+        ports:
+          http:
+            enabled: false
+            port: 8754
+          beastoutput:
+            enabled: true
+            port: 30105
+            protocol: TCP
 
     ingress:
       # -- Enable and configure ingress settings for the chart under this key.
