@@ -30,8 +30,6 @@ spec:
           http:
             enabled: false
           mqtt:
-            externalTrafficPolicy: Local
-            type: LoadBalancer
             enabled: true
             port: 1883
 

@@ -33,10 +33,10 @@ spec:
         enabled: true
         existingClaim: zigbee2mqtt-data
 
-        usb:
-          enabled: true
-          type: hostPath
-          hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
+      usb:
+        enabled: true
+        type: hostPath
+        hostPath: /dev/serial/by-id/usb-dresden_elektronik_ingenieurtechnik_GmbH_ConBee_II_DE2141304-if00
 
     service:
       main:
