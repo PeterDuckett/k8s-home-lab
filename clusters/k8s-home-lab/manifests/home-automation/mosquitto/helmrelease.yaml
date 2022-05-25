@@ -30,6 +30,8 @@ spec:
           http:
             enabled: false
           mqtt:
+            externalTrafficPolicy: Local
+            type: LoadBalancer
             enabled: true
             port: 1883
 
@@ -46,6 +48,33 @@ spec:
         volumeSpec:
           secret:
             secretName: mosquitto-config
+
+      CA_CERT:
+        enabled: false
+        type: custom
+        volumeSpec:
+          secret:
+            secretName: CA_CERT
+            items:
+              path: /mosquitto/config/certs/ca.crt
+
+      SERVER_CERT:
+        enabled: false
+        type: custom
+        volumeSpec:
+          secret:
+            secretName: SERVER_CERT
+            items:
+              path: /mosquitto/config/certs/server.crt
+
+      SERVER_KEY:
+        enabled: false
+        type: custom
+        volumeSpec:
+          secret:
+            secretName: SERVER_KEY
+            items:
+              path: /mosquitto/config/certs/server.key
 
     resources:
       requests:
