@@ -2,16 +2,15 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: zigbee2mqtt-data
+  name: home-automation-zigbee2mqtt-data-pv-claim
   namespace: home-automation
-  labels:
-    k10.kasten.io/backup: "true"
 spec:
   accessModes:
     - ReadWriteOnce
 
   resources:
     requests:
-      storage: 512Mi
+      storage: 1Gi
 
-  storageClassName: local-path
+  storageClassName: ""
+  volumeName: home-automation-zigbee2mqtt-data-pv-volume
