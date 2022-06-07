@@ -54,6 +54,8 @@ spec:
         type: LoadBalancer
         ports:
           sonos:
+            protocol: TCP
+            targetPort: 1400
             port: 1400
 
     ingress:
