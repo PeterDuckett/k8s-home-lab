@@ -46,10 +46,13 @@ spec:
 
     service:
       main:
-        type: LoadBalancer
+        primary: true
         ports:
           http:
             port: 8123
+      sonos:
+        type: LoadBalancer
+        ports:
           sonos:
             port: 1400
 
