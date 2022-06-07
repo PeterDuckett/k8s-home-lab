@@ -57,7 +57,8 @@ spec:
             protocol: TCP
             targetPort: 1400
             port: 1400
-
+        externalTrafficPolicy: Local
+        
     ingress:
       main:
         enabled: true
