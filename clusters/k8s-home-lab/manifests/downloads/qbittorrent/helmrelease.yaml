@@ -57,7 +57,7 @@ spec:
         enabled: true
         existingClaim: downloads-qbittorrent-config-pv-claim
       downloads:
-        enabled: false
+        enabled: true
         mountPath: /downloads
         existingClaim: downloads-pv-claim
       media:
