@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: tvheadend
-      version: 5.3.1
+      version: 5.3.2
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -20,7 +20,7 @@ spec:
       # -- image repository
       repository: ghcr.io/linuxserver/tvheadend
       # -- image tag
-      tag: version-42078692
+      tag: version-eb59284b
       # -- image pull policy
       pullPolicy: IfNotPresent
 
@@ -42,10 +42,16 @@ spec:
           http:
             enabled: true
             port: 9981
+      htsp:
+        enabled: true
+        type: LoadBalancer
+        ports:
           htsp:
             enabled: true
-            protocol: TCP
             port: 9982
+            protocol: TCP
+            targetPort: 9982
+        externalTrafficPolicy: Local
     
     securityContext:
       privileged: true
