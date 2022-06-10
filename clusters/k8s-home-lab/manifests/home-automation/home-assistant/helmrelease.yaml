@@ -47,13 +47,16 @@ spec:
     service:
       main:
         primary: true
+        enabled: true
         ports:
           http:
             port: 8123
       sonos:
+        enabled: true
         type: LoadBalancer
         ports:
           sonos:
+            enabled: true
             protocol: TCP
             targetPort: 1400
             port: 1400
