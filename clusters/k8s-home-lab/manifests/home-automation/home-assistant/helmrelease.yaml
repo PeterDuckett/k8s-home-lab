@@ -47,7 +47,6 @@ spec:
     service:
       main:
         primary: true
-        enabled: true
         ports:
           http:
             port: 8123
@@ -57,9 +56,9 @@ spec:
         ports:
           sonos:
             enabled: true
+            port: 1400
             protocol: TCP
             targetPort: 1400
-            port: 1400
         externalTrafficPolicy: Local
         
     ingress:
