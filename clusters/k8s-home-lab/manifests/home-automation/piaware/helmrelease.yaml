@@ -25,6 +25,9 @@ spec:
       # -- image pull policy
       pullPolicy: IfNotPresent
 
+    probes:
+      liveness:
+        enabled: false
     # -- environment variables. See [application docs](https://flightaware.com/adsb/piaware/advanced_configuration) for more details.
     # @default -- See below
     env:

@@ -27,6 +27,9 @@ spec:
 
       #command: ["sh", "-c", "/scripts/signup.sh"]
 
+    probes:
+      liveness:
+        enabled: false
     # initContainers:
     #   signup:
     #     image: mikenye/fr24feed:1.0.29-8
