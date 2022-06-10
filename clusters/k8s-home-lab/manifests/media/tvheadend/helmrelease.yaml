@@ -79,7 +79,7 @@ spec:
       config:
         enabled: true
         mountPath: /config
-        existingClaim: media-tvheadend-config-config-pv-claim
+        existingClaim: media-tvheadend-config-pv-claim
       recordings:
         enabled: false
         mountPath: /recordings
