@@ -9,3 +9,4 @@ resources:
   - ./downloads.yaml
   - ./home-automation.yaml
   - ./aircraft.yaml
+  - ./monitoring.yaml
