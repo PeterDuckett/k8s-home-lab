@@ -9,16 +9,10 @@ spec:
   chart:
     spec:
       chart: prometheus-community/prometheus
-      version: 2.36.2
+      version: 15.13.0
       sourceRef:
         kind: HelmRepository
         name: prometheus-community-charts
         namespace: flux-system
       interval: 5m
-    values:
-    image:
-    #   repository: ghcr.io/k8s-at-home/adguard-home
-    #   tag: v0.106.3
-      pullPolicy: IfNotPresent
-        
   
