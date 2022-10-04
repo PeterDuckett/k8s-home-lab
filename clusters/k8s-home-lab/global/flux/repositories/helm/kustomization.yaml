@@ -8,3 +8,4 @@ resources:
   - ./stakater-charts.yaml
   - ./peterduckett.yaml
   - ./prometheus-community-charts.yaml
+  - ./influxdata-charts.yaml
