@@ -23,18 +23,11 @@ spec:
       enabled: false
 
     ingress:
-      main:
-        enabled: true
-        #       ingressClassName: "traefik"
-        annotations:
+      enabled: true
+      tls: 
+        secretName: tls.influxdb
+      hostname: "influxdb.peterduckett.me"
+      annotations:
           cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"
-        hosts:
-          - host: &host "influxdb.peterduckett.me"
-            paths:
-              - path: /
-        tls:
-          - secretName: tls.influxdb
-            hosts:
-              - *host
 
