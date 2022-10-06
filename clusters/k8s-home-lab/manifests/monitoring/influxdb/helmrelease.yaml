@@ -24,8 +24,8 @@ spec:
 
     ingress:
       enabled: true
-      tls: 
-        secretName: tls.influxdb
+      tls: true
+      secretName: tls.influxdb
       hostname: "influxdb.peterduckett.me"
       annotations:
           cert-manager.io/cluster-issuer: letsencrypt
