@@ -42,8 +42,6 @@ spec:
       READSB_NET_ENABLE: true
       READSB_NET_CONNECTOR: mlathub-test,30105,beast_in
       INFLUXDBURL: https://influxdb.peterduckett.me
-      INFLUXDBUSERNAME: admin
-      INFLUXDBPASSWORD: tvPdEXrnuxY15kPnk5ZLnupDF0Qsv4xP
       INFLUXDB_V2: true
       INFLUXDB_V2_BUCKET: aircraft
       INFLUXDB_V2_ORG: influxdata
