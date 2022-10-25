@@ -41,6 +41,13 @@ spec:
       READSB_STATS_RANGE: true
       READSB_NET_ENABLE: true
       READSB_NET_CONNECTOR: mlathub-test,30105,beast_in
+      INFLUXDBURL: influxdb2
+      INFLUXDBUSERNAME: admin
+      INFLUXDBPASSWORD: tvPdEXrnuxY15kPnk5ZLnupDF0Qsv4xP
+      INFLUXDB_V2: true
+      INFLUXDB_V2_BUCKET: aircraft
+      INFLUXDB_V2_ORG: influxdata
+      INFLUXDB_V2_TOKEN: xPUQddbcIlz5c8qlQcLYeRckTu5SCnMw
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
@@ -111,4 +118,4 @@ spec:
                 - key: feature.node.kubernetes.io/custom-flightaware
                   operator: In
                   values:
-                    - "true"
+                    - "true" 
