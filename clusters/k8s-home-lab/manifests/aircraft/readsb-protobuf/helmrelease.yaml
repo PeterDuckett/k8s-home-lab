@@ -47,7 +47,7 @@ spec:
       INFLUXDB_V2: true
       INFLUXDB_V2_BUCKET: aircraft
       INFLUXDB_V2_ORG: influxdata
-      INFLUXDB_V2_TOKEN: xPUQddbcIlz5c8qlQcLYeRckTu5SCnMw
+      INFLUXDB_V2_TOKEN: kyj2UnIfl9zvum3ZRU2sgSN4pXEacAKuMyHJA6SqsOpgOiNUmV0AZJbymxgN3KZuV6Taumi22ypCE0H9ZlZnyA==
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
