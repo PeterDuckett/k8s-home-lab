@@ -9,3 +9,4 @@ resources:
   - ./peterduckett.yaml
   - ./prometheus-community-charts.yaml
   - ./influxdata-charts.yaml
+  - ./true-charts.yaml

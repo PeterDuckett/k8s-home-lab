@@ -9,16 +9,13 @@ spec:
   chart:
     spec:
       chart: bazarr
-      version: 10.5.2
+      version: 11.0.43
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: true-charts
         namespace: flux-system
       interval: 5m
   values:
-    image:
-      repository: ghcr.io/k8s-at-home/bazarr
-      tag: v1.0.3
 
     podAnnotations:
       setGateway: "true"
