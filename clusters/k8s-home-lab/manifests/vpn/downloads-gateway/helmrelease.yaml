@@ -86,6 +86,7 @@ spec:
         securityContext:
           runAsGroup: 0
           runAsUser: 0
+          allowPrivilegeEscalation: true
 
         env:
           TZ: "Europe/London"
