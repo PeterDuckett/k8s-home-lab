@@ -10,3 +10,4 @@ resources:
   - ./prometheus-community-charts.yaml
   - ./influxdata-charts.yaml
   - ./true-charts.yaml
+  - ./samipsolutions-charts.yaml
