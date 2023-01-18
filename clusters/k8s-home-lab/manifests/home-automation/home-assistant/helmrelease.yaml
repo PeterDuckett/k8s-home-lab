@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: home-assistant
-      version: 16.1.1
+      version: 13.6.0
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2022.10.5
+      tag: 2022.7.7
 
     nameOverride: "home-assistant"
 
