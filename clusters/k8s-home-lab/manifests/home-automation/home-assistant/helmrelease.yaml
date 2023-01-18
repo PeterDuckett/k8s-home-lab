@@ -18,7 +18,7 @@ spec:
   values:
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2022.10.5
+      tag: 2022.7.7
 
     nameOverride: "home-assistant"
 
@@ -60,7 +60,7 @@ spec:
             protocol: TCP
             targetPort: 1400
         externalTrafficPolicy: Local
-        
+
     ingress:
       main:
         enabled: true
