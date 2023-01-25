@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/fr24feed
       # -- image tag
-      tag: "1.0.34-0"
+      tag: "1.0.29-8"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
