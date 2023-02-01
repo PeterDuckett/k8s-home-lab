@@ -12,3 +12,4 @@ resources:
   - ./true-charts.yaml
   - ./samipsolutions-charts.yaml
   - ./bitnami-charts.yaml
+  - ./grafana-charts.yaml
