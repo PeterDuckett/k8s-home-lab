@@ -11,3 +11,4 @@ resources:
   - ./influxdata-charts.yaml
   - ./true-charts.yaml
   - ./samipsolutions-charts.yaml
+  - ./bitnami-charts.yaml

@@ -1,0 +1,31 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mariadb-galera
+  namespace: database
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: mariadb-galera
+      version: 7.4.13
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    image:
+      repository: bitnami/mariadb-galera
+      tag: 10.6.11
+      pullPolicy: IfNotPresent
+
+    podAnnotations:
+      secret.reloader.stakater.com/reload: home-assistant-secrets
+
+   # existingSecret: database-mariadb-galera-secret
+
+    persistence:
+      enabled: true
+      existingClaim: database-mariadb-galera-pvc-claim
