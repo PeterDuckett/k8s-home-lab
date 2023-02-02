@@ -29,9 +29,9 @@ spec:
           cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"   
       hosts:
-          - host: &host "grafana.${INGRESS_DOMAIN}"
-            paths:
-              - path: /
+        - host: &host "grafana.${INGRESS_DOMAIN}"
+          paths:
+            - path: /
       tls:
         - secretName: tls.grafana
           hosts:
