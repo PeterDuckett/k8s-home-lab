@@ -24,27 +24,24 @@ spec:
 
     ingress:
       enabled: true
- #     hostname: "grafana.peterduckett.me"
+      #     hostname: "grafana.peterduckett.me"
       annotations:
-          cert-manager.io/cluster-issuer: letsencrypt
-          kubernetes.io/ingress.class: "traefik"   
-      hosts: 
+        cert-manager.io/cluster-issuer: letsencrypt
+        kubernetes.io/ingress.class: "traefik"
+      hosts:
         - &host "grafana.${INGRESS_DOMAIN}"
-   
+
       tls:
         - secretName: tls.grafana
           hosts:
             - *host
 
-    initChownData:
-      enabled: false
-
     sidecar:
       dashboards:
-        enabled: false
+        enabled: true
         searchNamespace: ALL
       datasources:
-        enabled: false
+        enabled: true
         searchNamespace: ALL
 
     serviceMonitor:
