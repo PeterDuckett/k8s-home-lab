@@ -35,7 +35,10 @@ spec:
         - secretName: tls.grafana
           hosts:
             - *host
-            
+
+    initChownData:
+      enabled: false
+
     sidecar:
       dashboards:
         enabled: true
