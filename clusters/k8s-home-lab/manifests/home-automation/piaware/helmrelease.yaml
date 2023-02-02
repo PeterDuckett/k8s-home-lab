@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/piaware
       # -- image tag
-      tag: "v7.2"
+      tag: "v8.2"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
@@ -36,7 +36,7 @@ spec:
       LAT: "${LATITUDE}"
       LONG: "${LONGITUDE}"
       receiver-type: "relay"
-      BEASTHOST: 	readsb-protobuf-test
+      BEASTHOST: readsb-protobuf-test
       BEASTPORT: 30005
       #mlat-results-format: "beast,connect,localhost:30104"
       FEEDER_ID: "b30e104e-d3c1-48fe-b9f4-f80388cd70c6"
