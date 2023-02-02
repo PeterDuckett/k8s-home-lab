@@ -24,7 +24,7 @@ spec:
 
     ingress:
       enabled: true
-      hostname: "grafana.peterduckett.me"
+ #     hostname: "grafana.peterduckett.me"
       annotations:
           cert-manager.io/cluster-issuer: letsencrypt
           kubernetes.io/ingress.class: "traefik"   
