@@ -45,7 +45,7 @@ spec:
       INFLUXDB_V2: true
       INFLUXDB_V2_BUCKET: aircraft
       INFLUXDB_V2_ORG: influxdata
-      INFLUXDB_V2_TOKEN: kyj2UnIfl9zvum3ZRU2sgSN4pXEacAKuMyHJA6SqsOpgOiNUmV0AZJbymxgN3KZuV6Taumi22ypCE0H9ZlZnyA==
+      INFLUXDB_V2_TOKEN: GEx7H8vNhkMyFeZ447Gfq_3bOkiHmjK3iJM78Py9rIfPdY73leIMc_yRvzitDfr0g2R3jDGH2elqGpuJ5YFl4Q==
 
     # -- Configures service settings for the chart.
     # @default -- See values.yaml
@@ -116,4 +116,4 @@ spec:
                 - key: feature.node.kubernetes.io/custom-flightaware
                   operator: In
                   values:
-                    - "true" 
+                    - "true"
