@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
   #- ./cert-manager.yaml
   - ./system.yaml
-  - ./vpn.yaml
+ # - ./vpn.yaml
   - ./media.yaml
-  - ./downloads.yaml
+ # - ./downloads.yaml
   - ./home-automation.yaml
   - ./aircraft.yaml
   - ./monitoring.yaml
