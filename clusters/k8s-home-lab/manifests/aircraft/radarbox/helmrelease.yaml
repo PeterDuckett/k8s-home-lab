@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/radarbox
       # -- image tag
-      tag: "0.4.3-20210909231001"
+      tag: "v1.0.8-20220708190411"
       # -- image pull policy
       pullPolicy: IfNotPresent
 

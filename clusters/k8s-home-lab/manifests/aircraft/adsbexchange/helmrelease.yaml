@@ -21,7 +21,7 @@ spec:
       # -- image repository
       repository: mikenye/adsbexchange
       # -- image tag
-      tag: "20220518.0913"
+      tag: "20230121.0041"
       # -- image pull policy
       pullPolicy: IfNotPresent
 
