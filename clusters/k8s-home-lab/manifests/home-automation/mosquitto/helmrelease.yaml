@@ -9,17 +9,17 @@ spec:
   chart:
     spec:
       chart: mosquitto
-      version: 4.3.2
+      version: 8.0.8
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: true-charts
         namespace: flux-system
       interval: 5m
 
   values:
-    image:
-      repository: eclipse-mosquitto
-      tag: 2.0.14
+    #image:
+     # repository: eclipse-mosquitto
+    #  tag: 2.0.14
 
     podAnnotations:
       secret.reloader.stakater.com/reload: mosquitto-config
