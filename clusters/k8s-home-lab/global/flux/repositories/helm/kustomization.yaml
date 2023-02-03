@@ -13,3 +13,4 @@ resources:
   - ./samipsolutions-charts.yaml
   - ./bitnami-charts.yaml
   - ./grafana-charts.yaml
+  - ./intel-charts.yaml
