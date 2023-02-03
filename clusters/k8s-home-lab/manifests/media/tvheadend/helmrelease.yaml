@@ -9,10 +9,10 @@ spec:
   chart:
     spec:
       chart: tvheadend
-      version: 5.3.2
+      version: 14.0.10
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
+        name: true-charts
         namespace: flux-system
       interval: 5m
   values:
@@ -20,7 +20,7 @@ spec:
       # -- image repository
       repository: ghcr.io/linuxserver/tvheadend
       # -- image tag
-      tag: version-eb59284b
+      tag: version-c9a156a2
       # -- image pull policy
       pullPolicy: IfNotPresent
 
